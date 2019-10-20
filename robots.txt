@@ -1,0 +1,19 @@
+User-agent: *
+
+Disallow: /data/
+
+Disallow: /app/
+
+Disallow: /css/
+
+Disallow: /addons/
+
+Disallow: /framework/
+
+Disallow: /attachment/
+
+Disallow: /controller/
+
+Sitemap: https://bbs.00110.cn/sitemap.xml
+
+Sitemap: https://bbs.00110.cn/sitemap.html

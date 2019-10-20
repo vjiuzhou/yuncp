@@ -1,0 +1,29 @@
+<div class="news-footer">
+    <div class="layui-container">
+    <span class="layui-breadcrumb" lay-separator=" ">
+      <a>关于我们</a>
+      <a>合作伙伴</a>
+      <a>广告服务</a>
+      <a>常见问题</a>
+    </span>
+        <p class="copyright">Copyright &copy; 新闻网 赣ICP备12345678号</p>
+        <a id="wechat" href=""><i class="layui-icon layui-icon-news-wechat"></i></a>
+        <a id="weibo" href=""><i class="layui-icon layui-icon-news-weibo"></i></a>
+        <img id="code" src="{{_G['APP']}}/resource/static/img/code.png">
+    </div>
+</div>
+
+
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script>
+    layui.config({
+        base: "{{_G['APP']}}/resource/static/js/"
+    }).use('news');
+</script>
+
+</body>
+</html>

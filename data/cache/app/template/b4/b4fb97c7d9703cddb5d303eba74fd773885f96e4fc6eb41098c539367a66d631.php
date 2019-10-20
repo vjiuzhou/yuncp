@@ -1,0 +1,1957 @@
+<?php
+
+/* detail/response_time.html */
+class __TwigTemplate_0d644ca6cbbd85f8929b04dc331f6200da7529a40ab74cfbab7c712cf7747e9d extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo twig_include($this->env, $context, "common/ceping_header.html");
+        echo "
+
+";
+        // line 3
+        echo twig_include($this->env, $context, "common/ceping_nav.html");
+        echo "
+
+<script type=\"text/javascript\" src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/js/echarts.min.js\" ></script>
+<script type=\"text/javascript\" src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/js/china.js\" ></script>
+<script type=\"text/javascript\" src=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/js/theme.js\" ></script>
+<script type=\"text/javascript\" src=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/js/world.js\" ></script>
+
+
+
+";
+        // line 12
+        echo twig_include($this->env, $context, "common/ceping_detail_nav.html");
+        echo "
+<div class=\"layui-container \"  >
+    <div class=\"layui-row \">
+
+
+        <div class=\"layui-col-md12\">
+
+
+            <blockquote class=\"layui-elem-quote ceping-border-left\" >
+
+                <a href=\"responsetime-";
+        // line 22
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "html", null, true);
+        echo "-china-";
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array"), "html", null, true);
+        echo ".html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">中国</a>
+                <a href=\"responsetime-";
+        // line 23
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "html", null, true);
+        echo "-abroad-";
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array"), "html", null, true);
+        echo ".html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">全球</a>
+            </blockquote>
+
+
+        </div>
+
+    </div>
+    <div class=\"layui-row mab-backgroud-color\">
+
+
+
+        <div class=\"layui-col-md8 \" >
+
+
+            ";
+        // line 37
+        if (($this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array") == "china")) {
+            // line 38
+            echo "            <div id=\"main\" style=\"width: 700px;height:600px;text-align: center;margin:0 auto;\"></div>
+
+            ";
+        } else {
+            // line 41
+            echo "            <div id=\"mainworld\" style=\"width: 700px;height:600px;text-align: center;margin:0 auto;  \"></div>
+
+            ";
+        }
+        // line 44
+        echo "
+        </div>
+
+
+        <div class=\"layui-col-md4 layui-container-text\" style=\"border-left:1px solid #1f516a;\">
+
+            <div class=\"layui-col-md4 ceping-bottom\" >
+                中国地区
+            </div>
+            <div class=\"layui-col-md8 ceping-bottom\" >
+                平均响应时间- <span>";
+        // line 54
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ($context["averageTime"] ?? null), 2, ".", ","), "html", null, true);
+        echo "  ms</span>
+            </div>
+            <hr class=\"layui-bg-black\">
+            <div class=\"layui-row layui-col-md12 \" style=\"text-align: center;margin-bottom: 10px;\">   平均响应时间";
+        // line 57
+        if (($this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array") == "desc")) {
+            echo "最慢";
+        } else {
+            echo "最快";
+        }
+        echo "(TOP10)
+
+                ";
+        // line 59
+        if (($this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array") == "asc")) {
+            // line 60
+            echo "                <a href=\"responsetime-";
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "html", null, true);
+            echo "-";
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array"), "html", null, true);
+            echo "-desc.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">切换最慢</a>
+
+                ";
+        } else {
+            // line 63
+            echo "                <a href=\"responsetime-";
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "html", null, true);
+            echo "-";
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array"), "html", null, true);
+            echo "-asc.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">切换最快</a>
+                ";
+        }
+        // line 65
+        echo "            </div>
+
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    地点
+                </div>
+                <div class=\"layui-col-md8\" >
+                    响应时间（ms）
+                </div>
+            </div>
+            ";
+        // line 75
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["responseTimeTop10"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
+            // line 76
+            echo "            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    ";
+            // line 78
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "privonce_name", array()), "html", null, true);
+            echo "-";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "city_name", array()), "html", null, true);
+            echo "
+                </div>
+                <div class=\"layui-col-md8\" >
+                    ";
+            // line 81
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getAttribute($context["data"], "total", array()), 2, ".", ","), "html", null, true);
+            echo " ms
+                </div>
+            </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 85
+        echo "
+            <hr class=\"layui-bg-black ceping\">
+
+            <div class=\"layui-col-md12 ceping-bottom\" >
+                运营商数据
+            </div>
+
+            <hr class=\"layui-bg-black\">
+            <div class=\"layui-row layui-col-md12 \" style=\"text-align: center;margin-bottom: 10px;\">  平均响应时间</div>
+
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    运营商名称
+                </div>
+                <div class=\"layui-col-md8\" >
+                    响应时间（ms）
+                </div>
+            </div>
+            ";
+        // line 103
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["responseTimeOperator"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
+            // line 104
+            echo "            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                   ";
+            // line 106
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "name", array()), "html", null, true);
+            echo "
+                </div>
+                <div class=\"layui-col-md8\" >
+                    ";
+            // line 109
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getAttribute($context["data"], "total", array()), 2, ".", ","), "html", null, true);
+            echo " ms
+                </div>
+            </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 113
+        echo "        </div>
+        <hr class=\"layui-bg-black ceping\">
+        <!--<div  style=\"margin-top:40px;margin-bottom: 100px;height:500px; width: 100%;\" id=\"container2\"></div>-->
+        <div  style=\"margin-top:40px;margin-bottom: 100px;height:500px; width: 100%;\" id=\"container\"></div>
+    </div>
+
+
+</div>
+
+
+
+<!--<div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>-->
+</div>
+
+<script src=\"";
+        // line 127
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/layui/layui.all.js\" charset=\"utf-8\"></script>
+
+<!--
+地图图区域  国外
+-->
+<script>
+
+    ////////// 2018 年
+    var data = [
+        {name:'卢旺达',value:56.99},
+        {name:'布隆迪',value:20.27},
+        {name:'尼泊尔',value:40.01},
+        {name:'乌干达',value:40.37},
+        {name:'老挝',value:71.28},
+        {name:'埃塞俄比亚',value:19.96},
+        {name:'马达加斯加',value:21.82},
+        {name:'海地',value:33.11},
+        {name:'也门',value:51.51},
+        {name:'肯尼亚',value:33.33},
+        {name:'菲律宾',value:68.82},
+        {name:'索马里',value:0},
+        {name:'阿富汗',value:15.94},
+        {name:'巴基斯坦',value:28.16},
+        {name:'朝鲜',value:0},
+        {name:'印度',value:33.2},
+        {name:'厄立特里亚',value:10.59},
+        {name:'哥伦比亚',value:143.51},
+        {name:'哥伦比亚',value:143.51},
+        {name:'巴布亚新几内亚',value:32.39},
+        {name:'布基纳法索',value:12.84},
+        {name:'马拉维',value:9.97},
+        {name:'埃及',value:53.39},
+        {name:'塞拉利昂',value:8.72},
+        {name:'尼加拉瓜',value:29.14},
+        {name:'坦桑尼亚',value:13.09},
+        {name:'尼日利亚',value:43.94},
+        {name:'尼日尔',value:6.35},
+        {name:'毛里塔尼亚',value:21.69},
+        {name:'喀麦隆',value:19.69},
+        {name:'新加坡',value:788.07},
+        {name:'缅甸',value:15.48},
+        {name:'印尼',value:49.68},
+        {name:'贝宁',value:11.62},
+        {name:'摩洛哥',value:44.39},
+        {name:'马里',value:10.68},
+        {name:'哥斯达黎加',value:124.23},
+        {name:'萨尔瓦多',value:53.55},
+        {name:'厄瓜多尔',value:69.56},
+        {name:'泰国',value:75.76},
+        {name:'斯里兰卡',value:40.52},
+        {name:'多米尼加',value:77.08},
+        {name:'韩国',value:312.71},
+        {name:'刚果民主共和国',value:4.37},
+        {name:'越南',value:18.4},
+        {name:'几内亚',value:5.92},
+        {name:'危地马拉',value:37.58},
+        {name:'利比里亚',value:4.31},
+        {name:'多哥',value:6.35},
+        {name:'秘鲁',value:64.13},
+        {name:'毛里求斯',value:100.04},
+        {name:'莫桑比克',value:5.08},
+        {name:'阿尔及利亚',value:53.74},
+        {name:'柬埔寨',value:9.37},
+        {name:'斯威士兰',value:45.26},
+        {name:'乍得',value:10.66},
+        {name:'塞内加尔',value:11.74},
+        {name:'津巴布韦',value:7.85},
+        {name:'黎巴嫩',value:95.02},
+        {name:'洪都拉斯',value:22.47},
+        {name:'伊拉克',value:47.76},
+        {name:'科特迪瓦',value:13.1},
+        {name:'孟加拉国',value:7.25},
+        {name:'赞比亚',value:13.51},
+        {name:'巴拿马',value:72.29},
+        {name:'中非共和国',value:3.97},
+        {name:'突尼斯',value:36.71},
+        {name:'加纳',value:11.49},
+        {name:'斐济',value:31.41},
+        {name:'安哥拉',value:32.99},
+        {name:'冈比亚',value:4.76},
+        {name:'中国',value:37.89},
+        {name:'刚果共和国',value:24.02},
+        {name:'古巴',value:45.95},
+        {name:'苏丹',value:14.59},
+        {name:'伊朗',value:49.76},
+        {name:'委内瑞拉',value:106.43},
+        {name:'土耳其',value:73.85},
+        {name:'牙买加',value:32.98},
+        {name:'叙利亚',value:0},
+        {name:'玻利维亚',value:13.1},
+        {name:'巴西',value:68.18},
+        {name:'阿联酋',value:204.32},
+        {name:'智利',value:70.17},
+        {name:'马来西亚',value:47.23},
+        {name:'苏里南',value:43.68},
+        {name:'前南马其顿',value:23.52},
+        {name:'加蓬',value:47.86},
+        {name:'日本',value:224.41},
+        {name:'阿尔巴尼亚',value:19.88},
+        {name:'墨西哥',value:42.05},
+        {name:'波多黎各',value:122.98},
+        {name:'以色列',value:137.51},
+        {name:'西班牙',value:139},
+        {name:'特立尼达和多巴哥',value:73.85},
+        {name:'卡塔尔',value:312.81},
+        {name:'克罗地亚',value:19.07},
+        {name:'乌拉圭',value:50.36},
+        {name:'塔吉克斯坦',value:3.13},
+        {name:'巴林',value:85.71},
+        {name:'巴拉圭',value:13.55},
+        {name:'沙特阿拉伯',value:75.26},
+        {name:'瑞士',value:290.61},
+        {name:'蒙古',value:10.27},
+        {name:'科威特',value:144.27},
+        {name:'圭亚那',value:11.3},
+        {name:'英国',value:142.92},
+        {name:'塞浦路斯',value:85.21},
+        {name:'阿根廷',value:36.4},
+        {name:'爱尔兰',value:170.27},
+        {name:'意大利',value:122.84},
+        {name:'南非',value:25.19},
+        {name:'荷兰',value:167.29},
+        {name:'黑山共和国',value:20.69},
+        {name:'利比亚',value:35.61},
+        {name:'亚美尼亚',value:9.26},
+        {name:'斯洛文尼亚',value:68.59},
+        {name:'波兰',value:35.51},
+        {name:'希腊',value:74.84},
+        {name:'纳米比亚',value:14.1},
+        {name:'德国',value:113.16},
+        {name:'阿曼',value:53.31},
+        {name:'格鲁吉亚',value:7.76},
+        {name:'卢森堡',value:261.76},
+        {name:'葡萄牙',value:56.74},
+        {name:'阿塞拜疆',value:14.7},
+        {name:'新喀里多尼亚',value:0},
+        {name:'吉尔吉斯斯坦',value:2.18},
+        {name:'新西兰',value:81.44},
+        {name:'乌兹别克斯坦',value:3.28},
+        {name:'塞尔维亚',value:12.33},
+        {name:'法国',value:91.28},
+        {name:'奥地利',value:102.69},
+        {name:'捷克共和国',value:39.81},
+        {name:'斯洛伐克',value:33.15},
+        {name:'拉脱维亚',value:21.6},
+        {name:'挪威',value:164.82},
+        {name:'土库曼斯坦',value:8.36},
+        {name:'比利时',value:81.96},
+        {name:'丹麦',value:99.84},
+        {name:'匈牙利',value:22.46},
+        {name:'伯利兹',value:6.99},
+        {name:'瑞典',value:82.78},
+        {name:'博茨瓦纳',value:9.84},
+        {name:'罗马尼亚',value:12.26},
+        {name:'俄罗斯',value:15.51},
+        {name:'澳大利亚',value:74.66},
+        {name:'加拿大',value:67.79},
+        {name:'保加利亚',value:9.73},
+        {name:'哈萨克斯坦',value:12.24},
+        {name:'立陶宛',value:16.14},
+        {name:'爱沙尼亚',value:19.49},
+        {name:'白俄罗斯',value:7.67},
+        {name:'美国',value:63.52},
+        {name:'美国',value:63.52},
+        {name:'文莱',value:45.69},
+        {name:'摩尔多瓦',value:2.08},
+        {name:'巴哈马',value:26.37},
+        {name:'芬兰',value:55.07},
+        {name:'乌克兰',value:3.33},
+        {name:'北马里亚纳',value:0},
+
+
+
+//{name:'南苏丹',value:0},
+//{name:'索马里兰',value:0},
+//{name:'黑山',value:0},
+//{name:'科索沃',value:0},
+//{name:'塞尔维亚',value:0},
+    ];
+
+    var nameMap = {
+        'Afghanistan':'阿富汗',
+        'Albania':'阿尔巴尼亚',
+        'Algeria':'阿尔及利亚',
+        'Andorra':'安道尔',
+        'Angola':'安哥拉',
+        'Antarctica':'南极洲',
+        'Antigua and Barbuda':'安提瓜和巴布达',
+        'Argentina':'阿根廷',
+        'Armenia':'亚美尼亚',
+        'Australia':'澳大利亚',
+        'Austria':'奥地利',
+        'Azerbaijan':'阿塞拜疆',
+        'The Bahamas':'巴哈马',
+        'Bahrain':'巴林',
+        'Bangladesh':'孟加拉国',
+        'Barbados':'巴巴多斯',
+        'Belarus':'白俄罗斯',
+        'Belgium':'比利时',
+        'Belize':'伯利兹',
+        'Benin':'贝宁',
+        'Bermuda':'百慕大',
+        'Bhutan':'不丹',
+        'Bolivia':'玻利维亚',
+        'Bosnia and Herzegovina':'波斯尼亚和黑塞哥维那',
+        'Botswana':'博茨瓦纳',
+        'Brazil':'巴西',
+        'Brunei':'文莱',
+        'Bulgaria':'保加利亚',
+        'Burkina Faso':'布基纳法索',
+        'Burundi':'布隆迪',
+        'Cambodia':'柬埔寨',
+        'Cameroon':'喀麦隆',
+        'Canada':'加拿大',
+        'Cape Verde':'佛得角',
+        'Central African Republic':'中非共和国',
+        'Chad':'乍得',
+        'Chile':'智利',
+        'China':'中国',
+        'Colombia':'哥伦比亚',
+        'Comoros':'科摩罗',
+        'Republic of the Congo':'刚果共和国',
+        'Costa Rica':'哥斯达黎加',
+        'Croatia':'克罗地亚',
+        'Cuba':'古巴',
+        'Cyprus':'塞浦路斯',
+        'Czech Republic':'捷克共和国',
+        'Denmark':'丹麦',
+        'Djibouti':'吉布提',
+        'Dominica':'多米尼加',
+        'Dominican Republic':'多明尼加共和国',
+        'Ecuador':'厄瓜多尔',
+        'Egypt':'埃及',
+        'El Salvador':'萨尔瓦多',
+        'Equatorial Guinea':'赤道几内亚',
+        'Eritrea':'厄立特里亚',
+        'Estonia':'爱沙尼亚',
+        'Ethiopia':'埃塞俄比亚',
+        'Falkland Islands':'福克兰群岛',
+        'Faroe Islands':'法罗群岛',
+        'Fiji':'斐济',
+        'Finland':'芬兰',
+        'France':'法国',
+        'French Guiana':'法属圭亚那',
+        'French Southern and Antarctic Lands':'法属南半球和南极领地',
+        'Gabon':'加蓬',
+        'Gambia':'冈比亚',
+        'Gaza Strip':'加沙',
+        'Georgia':'格鲁吉亚',
+        'Germany':'德国',
+        'Ghana':'加纳',
+        'Greece':'希腊',
+        'Greenland':'格陵兰',
+        'Grenada':'格林纳达',
+        'Guadeloupe':'瓜德罗普',
+        'Guatemala':'危地马拉',
+        'Guinea':'几内亚',
+        'Guinea Bissau':'几内亚比绍',
+        'Guyana':'圭亚那',
+        'Haiti':'海地',
+        'Honduras':'洪都拉斯',
+        'Hong Kong':'香港',
+        'Hungary':'匈牙利',
+        'Iceland':'冰岛',
+        'India':'印度',
+        'Indonesia':'印尼',
+        'Iran':'伊朗',
+        'Iraq':'伊拉克',
+        'Iraq-Saudi Arabia Neutral Zone':'伊拉克阿拉伯中立区',
+        'Ireland':'爱尔兰',
+        'Isle of Man':'马恩岛',
+        'Israel':'以色列',
+        'Italy':'意大利',
+        'Ivory Coast':'科特迪瓦',
+        'Jamaica':'牙买加',
+        'Jan Mayen':'扬马延岛',
+        'Japan':'日本',
+        'Jordan':'约旦',
+        'Kazakhstan':'哈萨克斯坦',
+        'Kenya':'肯尼亚',
+        'Kerguelen':'凯尔盖朗群岛',
+        'Kiribati':'基里巴斯',
+        'North Korea':'北朝鲜',
+        'South Korea':'韩国',
+        'Kuwait':'科威特',
+        'Kyrgyzstan':'吉尔吉斯斯坦',
+        'Laos':'老挝',
+        'Latvia':'拉脱维亚',
+        'Lebanon':'黎巴嫩',
+        'Lesotho':'莱索托',
+        'Liberia':'利比里亚',
+        'Libya':'利比亚',
+        'Liechtenstein':'列支敦士登',
+        'Lithuania':'立陶宛',
+        'Luxembourg':'卢森堡',
+        'Macau':'澳门',
+        'Macedonia':'马其顿',
+        'Madagascar':'马达加斯加',
+        'Malawi':'马拉维',
+        'Malaysia':'马来西亚',
+        'Maldives':'马尔代夫',
+        'Mali':'马里',
+        'Malta':'马耳他',
+        'Martinique':'马提尼克',
+        'Mauritania':'毛里塔尼亚',
+        'Mauritius':'毛里求斯',
+        'Mexico':'墨西哥',
+        'Moldova':'摩尔多瓦',
+        'Monaco':'摩纳哥',
+        'Mongolia':'蒙古',
+        'Morocco':'摩洛哥',
+        'Mozambique':'莫桑比克',
+        'Myanmar':'缅甸',
+        'Namibia':'纳米比亚',
+        'Nepal':'尼泊尔',
+        'Netherlands':'荷兰',
+        'New Caledonia':'新喀里多尼亚',
+        'New Zealand':'新西兰',
+        'Nicaragua':'尼加拉瓜',
+        'Niger':'尼日尔',
+        'Nigeria':'尼日利亚',
+        'Northern Mariana Islands':'北马里亚纳群岛',
+        'Norway':'挪威',
+        'Oman':'阿曼',
+        'Pakistan':'巴基斯坦',
+        'Panama':'巴拿马',
+        'Papua New Guinea':'巴布亚新几内亚',
+        'Paraguay':'巴拉圭',
+        'Peru':'秘鲁',
+        'Philippines':'菲律宾',
+        'Poland':'波兰',
+        'Portugal':'葡萄牙',
+        'Puerto Rico':'波多黎各',
+        'Qatar':'卡塔尔',
+        'Reunion':'留尼旺岛',
+        'Romania':'罗马尼亚',
+        'Russia':'俄罗斯',
+        'Rwanda':'卢旺达',
+        'San Marino':'圣马力诺',
+        'Sao Tome and Principe':'圣多美和普林西比',
+        'Saudi Arabia':'沙特阿拉伯',
+        'Senegal':'塞内加尔',
+        'Seychelles':'塞舌尔',
+        'Sierra Leone':'塞拉利昂',
+        'Singapore':'新加坡',
+        'Slovakia':'斯洛伐克',
+        'Slovenia':'斯洛文尼亚',
+        'Solomon Islands':'所罗门群岛',
+        'Somalia':'索马里',
+        'South Africa':'南非',
+        'Spain':'西班牙',
+        'Sri Lanka':'斯里兰卡',
+        'St. Christopher-Nevis':'圣',
+        'St. Lucia':'圣露西亚',
+        'St. Vincent and the Grenadines':'圣文森特和格林纳丁斯',
+        'Sudan':'苏丹',
+        'Suriname':'苏里南',
+        'Svalbard':'斯瓦尔巴特群岛',
+        'Swaziland':'斯威士兰',
+        'Sweden':'瑞典',
+        'Switzerland':'瑞士',
+        'Syria':'叙利亚',
+        'Taiwan':'台湾',
+        'Tajikistan':'塔吉克斯坦',
+        'United Republic of Tanzania':'坦桑尼亚',
+        'Thailand':'泰国',
+        'Togo':'多哥',
+        'Tonga':'汤加',
+        'Trinidad and Tobago':'特里尼达和多巴哥',
+        'Tunisia':'突尼斯',
+        'Turkey':'土耳其',
+        'Turkmenistan':'土库曼斯坦',
+        'Turks and Caicos Islands':'特克斯和凯科斯群岛',
+        'Uganda':'乌干达',
+        'Ukraine':'乌克兰',
+        'United Arab Emirates':'阿联酋',
+        'United Kingdom':'英国',
+        'United States of America':'美国',
+        'Uruguay':'乌拉圭',
+        'Uzbekistan':'乌兹别克斯坦',
+        'Vanuatu':'瓦努阿图',
+        'Venezuela':'委内瑞拉',
+        'Vietnam':'越南',
+        'Western Sahara':'西撒哈拉',
+        'Western Samoa':'西萨摩亚',
+        'Yemen':'也门',
+        'Yugoslavia':'南斯拉夫',
+        'Democratic Republic of the Congo':'刚果民主共和国',
+        'Zambia':'赞比亚',
+        'Zimbabwe':'津巴布韦',
+        'South Sudan':'南苏丹',
+        'Somaliland':'索马里兰',
+        'Montenegro':'黑山',
+        'Kosovo':'科索沃',
+        'Republic of Serbia':'塞尔维亚',
+
+    };
+
+    function showWolrdMap(data){
+        optionMap = {
+            timeline: {
+                axisType: 'category',
+                orient: 'vertical',
+                autoPlay: true,
+                inverse: true,
+                playInterval: 5000,
+                left: null,
+                right: -105,
+                top: 20,
+                bottom: 20,
+                width: 46,
+            },
+            baseOption: {
+                visualMap: {
+                    type: 'piecewise', //分段型。
+                    splitNumber: 6,
+                    inverse: true,
+                    pieces: [{
+                        min: -1,
+                        max: 0,
+                        color: '#759aa0'
+                    }, {
+                        min: 1,
+                        max: 100,
+                        color: '#73b9bc'
+                    }, {
+                        min: 100,
+                        max: 150,
+                        color: '#8dc1a9'
+                    }, {
+                        min: 150,
+                        max: 200,
+                        color: '#e69d87'
+                    }, {
+                        min: 200,
+                        max: 300,
+                        color: '#ea7e53'
+                    }, {
+                        min: 300,
+                        max: 500,
+                        color: '#dd6b66'
+                    }],
+                    left: 'left',
+                    top: 'bottom',
+                    textStyle: {
+                        color: '#000'
+                    },
+                    //min: 0,
+                    //max: 60000,
+                    //text:['High','Low'],
+                    //realtime: true,
+                    //calculable: true,
+                    //color: ['red','orange','lightgreen']
+                },
+                series: [{
+                    type: 'map',
+                    map: 'world',
+                    roam: false,
+                    itemStyle:{
+                        emphasis:{label:{show:false}}
+                    },
+                    nameMap: nameMap
+
+                }]
+            },
+
+            options: [{
+                title: {
+                    text: '全国监测点返回24小时平均响应时间',
+                    subtext: '全球监测点返回数据',
+                    //sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+                    left: 'center',
+                    top: 'top'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        var value = (params.value);
+                        //value = value.toFixed(5);toFixed(3)控制小数位数
+                        value = value;
+                        if(!value){
+                            return;
+                        }
+                        //var abc=(params.abc);
+                        return  params.name + ' : ' + value+' ms';
+                    }
+                },
+                series: {
+                    data: data
+
+                }
+            }, ]
+        };
+
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('mainworld'),'wonderland');
+
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(optionMap);
+    }
+</script>
+<!--
+折线图区域  国内
+-->
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+//        table.init('parse-table-demo', { //转化静态表格
+//            //height: 'full-500'
+//        });
+//                        var \$ = layui.\$, active = {
+//                            parseTable: function(){
+//
+//                            }
+//                        };
+//
+//                        \$('.demoTable .layui-btn').on('click', function(){
+//                            var type = \$(this).data('type');
+//                            active[type] ? active[type].call(this) : '';
+//                        });
+    });
+
+    function randomData() {
+//        return Math.round(Math.random()*500);
+        return 0;
+    }
+    var url=\"";
+        // line 653
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["G"] ?? null), "url", array(0 => "app/CePingDetail/getMapData", 1 => array("id" => $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "type" => $this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array"))), "method"), "html", null, true);
+        echo "\";
+     mapdata = [
+        {name: '北京',value:  randomData() },{name: '天津',value: randomData() },
+        {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
+        {name: '河北',value: randomData() },{name: '河南',value: randomData() },
+        {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
+        {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
+        {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
+        {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
+        {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
+        {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
+        {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
+        {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
+        {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
+        {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
+        {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
+        {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
+        {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
+        {name: '香港',value: randomData() },{name: '澳门',value: randomData() }
+    ];
+
+    \$.ajax({
+        url : url ,
+        type : \"get\" ,
+        dataType : \"json\" ,
+        success:function (data) {
+            var type=\"";
+        // line 679
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array"), "html", null, true);
+        echo "\";
+            mapdata=data;
+            if(type==\"china\"){
+                showMap(mapdata)
+            }else{
+
+                showWolrdMap(mapdata)
+            }
+        },
+        error:function (XmlHttpRequest) {
+            //   console.log(XmlHttpRequest);
+        }
+    });
+    function showMap(mapdata){
+        var optionMap = {
+            backgroundColor: '#f2f2f2',
+            title: {
+                text: '全国监测点返回24小时平均响应时间',
+                subtext: '',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: function (params) {
+                    var value = (params.value);
+                    //value = value.toFixed(5);toFixed(3)控制小数位数
+                    value = value;
+                    if(!value){
+                        return;
+                    }
+                    //var abc=(params.abc);
+                    return  params.name + ' : ' + value+' ms';
+                }
+            },
+
+            //左侧小导航图标
+            visualMap: {
+                show : true,
+                x: 'left',
+                y: 'center',
+                splitList: [
+                    {start: 200, end:500},{start: 150, end: 200},
+                    {start: 100, end: 150},{start: 50, end: 100},
+                    {start: 1, end: 50},{start: -1, end: 1},
+                ],
+                 color: ['#FF5722', '#FFB800', '#5FB878','#74e2ca', '#009688', '#393D49']
+            },
+
+            //配置属性
+            series: [{
+                name: '数据',
+                type: 'map',
+                mapType: 'china',
+                roam: false,
+                label: {
+                    normal: {
+                        show: true  //省份名称
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                data:mapdata  //数据
+            }]
+        };
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),'wonderland');
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(optionMap);
+    }
+
+
+</script>
+<!--
+折线图区域  国内
+-->
+
+<script type=\"text/javascript\">
+    var dom = document.getElementById(\"container\");
+    var myChart = echarts.init(dom);
+    var orderby=\"";
+        // line 759
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array"), "html", null, true);
+        echo "\";
+//    var charts = {
+//        unit: '响应时间（TOP5）%',
+//        names: ['上海移动','美国纽约市','天津移动','山东济南联通','北京市联通'],
+//        lineX: ['00:00', '01:15', '02:30', '03:45', '05:00', '06:15', '07:30', '08:45', '10:00', '11:15', '12:30', '13:45', '15:00', '16:15', '17:30', '18:45', '20:00', '21:15', '22:30', '23:45'],
+//        value: [
+//            [451, 352, 303, 534, 95, 236, 217, 328, 159, 151, 231, 192, 453, 524, 165, 236, 527, 328, 129, 530],
+//            [360, 545, 80, 192, 330, 580, 192, 80, 250, 453, 2, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [1, 545, 80, 192, 330, 580, 2, 80, 250, 453, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [3, 545, 80, 192, 330, 580, 3, 80, 250, 3, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [2, 545, 80, 192, 330, 580, 192, 80, 250, 2, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98]
+//        ]
+//
+//    }
+    var url=\"";
+        // line 773
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["G"] ?? null), "url", array(0 => "app/CePingDetail/getLineChart", 1 => array("id" => $this->getAttribute(($context["_GPC"] ?? null), "id", array(), "array"), "type" => $this->getAttribute(($context["_GPC"] ?? null), "type", array(), "array"), "orderby" => $this->getAttribute(($context["_GPC"] ?? null), "orderby", array(), "array"))), "method"), "html", null, true);
+        echo "\";
+
+    \$.ajax({
+        url : url ,
+        type : \"get\" ,
+        dataType : \"json\" ,
+        success:function (data) {
+
+           if(orderby==\"desc\"){
+               var unit= '响应时间最慢（TOP5）ms';
+           }else{
+               var unit= '响应时间最快（TOP5）ms';
+           }
+            var charts = {
+                unit: unit,
+                names: data.name,
+                lineX: data.chartData.lineX,
+                value: data.chartData.value
+            }
+
+            showChart(charts)
+        },
+        error:function (XmlHttpRequest) {
+            //   console.log(XmlHttpRequest);
+        }
+    });
+
+    function showChart(charts){
+        var color = ['rgba(35, 90, 119', 'rgba(0,150,136', 'rgba(95,184,120', 'rgba(1,170,237', 'rgba(255,182,193']
+        var lineY = []
+
+        for (var i = 0; i < charts.names.length; i++) {
+            var x = i
+            if (x > color.length - 1) {
+                x = color.length - 1
+            }
+            var data = {
+                name: charts.names[i],
+                type: 'line',
+                color: color[x] + ')',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: color[x] + ', 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: color[x] + ', 0)'
+                        }], false),
+                        shadowColor: '#393D49',
+                        shadowBlur: 10
+                    }
+                },
+                symbol: 'circle',
+                symbolSize: 5,
+                data: charts.value[i]
+            }
+            lineY.push(data)
+        }
+
+        var option = {
+            backgroundColor:'#f2f2f2',
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: charts.names,
+                textStyle: {
+                    fontSize: 12,
+                    color: '#1f516abd'
+                },
+                right: '4%'
+            },
+            grid: {
+                top: '14%',
+                left: '4%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: charts.lineX,
+                axisLabel: {
+                    textStyle: {
+                        color: '#1f516a'
+                    },
+                    formatter: function(params) {
+                        return params.split(' ')[0]
+                    }
+                }
+            },
+            yAxis: {
+                name: charts.unit,
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value}'+' ms',
+                    textStyle: {
+                        color: '#333'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#1f516abd'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#393D49'
+                    }
+                },
+
+            },
+            series: lineY
+        }
+
+
+
+        if (option && typeof option === \"object\") {
+            myChart.setOption(option, true);
+        }
+    }
+
+</script>
+";
+        // line 899
+        echo twig_include($this->env, $context, "common/ceping_footer.html");
+    }
+
+    public function getTemplateName()
+    {
+        return "detail/response_time.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  1029 => 899,  900 => 773,  883 => 759,  800 => 679,  771 => 653,  242 => 127,  226 => 113,  216 => 109,  210 => 106,  206 => 104,  202 => 103,  182 => 85,  172 => 81,  164 => 78,  160 => 76,  156 => 75,  144 => 65,  136 => 63,  127 => 60,  125 => 59,  116 => 57,  110 => 54,  98 => 44,  93 => 41,  88 => 38,  86 => 37,  67 => 23,  61 => 22,  48 => 12,  41 => 8,  37 => 7,  33 => 6,  29 => 5,  24 => 3,  19 => 1,);
+    }
+
+    /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return $this->getSourceContext()->getCode();
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{{ include(\"common/ceping_header.html\")}}
+
+{{ include(\"common/ceping_nav.html\")}}
+
+<script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/static/js/echarts.min.js\" ></script>
+<script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/static/js/china.js\" ></script>
+<script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/static/js/theme.js\" ></script>
+<script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/static/js/world.js\" ></script>
+
+
+
+{{ include(\"common/ceping_detail_nav.html\")}}
+<div class=\"layui-container \"  >
+    <div class=\"layui-row \">
+
+
+        <div class=\"layui-col-md12\">
+
+
+            <blockquote class=\"layui-elem-quote ceping-border-left\" >
+
+                <a href=\"responsetime-{{_GPC['id']}}-china-{{_GPC['orderby']}}.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">中国</a>
+                <a href=\"responsetime-{{_GPC['id']}}-abroad-{{_GPC['orderby']}}.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">全球</a>
+            </blockquote>
+
+
+        </div>
+
+    </div>
+    <div class=\"layui-row mab-backgroud-color\">
+
+
+
+        <div class=\"layui-col-md8 \" >
+
+
+            {% if _GPC['type'] == 'china' %}
+            <div id=\"main\" style=\"width: 700px;height:600px;text-align: center;margin:0 auto;\"></div>
+
+            {% else %}
+            <div id=\"mainworld\" style=\"width: 700px;height:600px;text-align: center;margin:0 auto;  \"></div>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class=\"layui-col-md4 layui-container-text\" style=\"border-left:1px solid #1f516a;\">
+
+            <div class=\"layui-col-md4 ceping-bottom\" >
+                中国地区
+            </div>
+            <div class=\"layui-col-md8 ceping-bottom\" >
+                平均响应时间- <span>{{ averageTime|number_format(2, '.', ',') }}  ms</span>
+            </div>
+            <hr class=\"layui-bg-black\">
+            <div class=\"layui-row layui-col-md12 \" style=\"text-align: center;margin-bottom: 10px;\">   平均响应时间{% if _GPC['orderby'] == 'desc' %}最慢{% else %}最快{% endif %}(TOP10)
+
+                {% if _GPC['orderby'] == 'asc' %}
+                <a href=\"responsetime-{{_GPC['id']}}-{{_GPC['type']}}-desc.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">切换最慢</a>
+
+                {% else %}
+                <a href=\"responsetime-{{_GPC['id']}}-{{_GPC['type']}}-asc.html\" class=\"layui-btn layui-btn-ceping\" data-type=\"parseTable\">切换最快</a>
+                {% endif %}
+            </div>
+
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    地点
+                </div>
+                <div class=\"layui-col-md8\" >
+                    响应时间（ms）
+                </div>
+            </div>
+            {% for data in responseTimeTop10 %}
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    {{data.privonce_name}}-{{data.city_name}}
+                </div>
+                <div class=\"layui-col-md8\" >
+                    {{ data.total|number_format(2, '.', ',') }} ms
+                </div>
+            </div>
+            {% endfor %}
+
+            <hr class=\"layui-bg-black ceping\">
+
+            <div class=\"layui-col-md12 ceping-bottom\" >
+                运营商数据
+            </div>
+
+            <hr class=\"layui-bg-black\">
+            <div class=\"layui-row layui-col-md12 \" style=\"text-align: center;margin-bottom: 10px;\">  平均响应时间</div>
+
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                    运营商名称
+                </div>
+                <div class=\"layui-col-md8\" >
+                    响应时间（ms）
+                </div>
+            </div>
+            {% for data in responseTimeOperator %}
+            <div class=\"layui-row  ceping-bottom\">
+                <div class=\"layui-col-md4\" >
+                   {{data.name}}
+                </div>
+                <div class=\"layui-col-md8\" >
+                    {{ data.total|number_format(2, '.', ',') }} ms
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <hr class=\"layui-bg-black ceping\">
+        <!--<div  style=\"margin-top:40px;margin-bottom: 100px;height:500px; width: 100%;\" id=\"container2\"></div>-->
+        <div  style=\"margin-top:40px;margin-bottom: 100px;height:500px; width: 100%;\" id=\"container\"></div>
+    </div>
+
+
+</div>
+
+
+
+<!--<div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>-->
+</div>
+
+<script src=\"{{_G['APP']}}/resource/layui/layui.all.js\" charset=\"utf-8\"></script>
+
+<!--
+地图图区域  国外
+-->
+<script>
+
+    ////////// 2018 年
+    var data = [
+        {name:'卢旺达',value:56.99},
+        {name:'布隆迪',value:20.27},
+        {name:'尼泊尔',value:40.01},
+        {name:'乌干达',value:40.37},
+        {name:'老挝',value:71.28},
+        {name:'埃塞俄比亚',value:19.96},
+        {name:'马达加斯加',value:21.82},
+        {name:'海地',value:33.11},
+        {name:'也门',value:51.51},
+        {name:'肯尼亚',value:33.33},
+        {name:'菲律宾',value:68.82},
+        {name:'索马里',value:0},
+        {name:'阿富汗',value:15.94},
+        {name:'巴基斯坦',value:28.16},
+        {name:'朝鲜',value:0},
+        {name:'印度',value:33.2},
+        {name:'厄立特里亚',value:10.59},
+        {name:'哥伦比亚',value:143.51},
+        {name:'哥伦比亚',value:143.51},
+        {name:'巴布亚新几内亚',value:32.39},
+        {name:'布基纳法索',value:12.84},
+        {name:'马拉维',value:9.97},
+        {name:'埃及',value:53.39},
+        {name:'塞拉利昂',value:8.72},
+        {name:'尼加拉瓜',value:29.14},
+        {name:'坦桑尼亚',value:13.09},
+        {name:'尼日利亚',value:43.94},
+        {name:'尼日尔',value:6.35},
+        {name:'毛里塔尼亚',value:21.69},
+        {name:'喀麦隆',value:19.69},
+        {name:'新加坡',value:788.07},
+        {name:'缅甸',value:15.48},
+        {name:'印尼',value:49.68},
+        {name:'贝宁',value:11.62},
+        {name:'摩洛哥',value:44.39},
+        {name:'马里',value:10.68},
+        {name:'哥斯达黎加',value:124.23},
+        {name:'萨尔瓦多',value:53.55},
+        {name:'厄瓜多尔',value:69.56},
+        {name:'泰国',value:75.76},
+        {name:'斯里兰卡',value:40.52},
+        {name:'多米尼加',value:77.08},
+        {name:'韩国',value:312.71},
+        {name:'刚果民主共和国',value:4.37},
+        {name:'越南',value:18.4},
+        {name:'几内亚',value:5.92},
+        {name:'危地马拉',value:37.58},
+        {name:'利比里亚',value:4.31},
+        {name:'多哥',value:6.35},
+        {name:'秘鲁',value:64.13},
+        {name:'毛里求斯',value:100.04},
+        {name:'莫桑比克',value:5.08},
+        {name:'阿尔及利亚',value:53.74},
+        {name:'柬埔寨',value:9.37},
+        {name:'斯威士兰',value:45.26},
+        {name:'乍得',value:10.66},
+        {name:'塞内加尔',value:11.74},
+        {name:'津巴布韦',value:7.85},
+        {name:'黎巴嫩',value:95.02},
+        {name:'洪都拉斯',value:22.47},
+        {name:'伊拉克',value:47.76},
+        {name:'科特迪瓦',value:13.1},
+        {name:'孟加拉国',value:7.25},
+        {name:'赞比亚',value:13.51},
+        {name:'巴拿马',value:72.29},
+        {name:'中非共和国',value:3.97},
+        {name:'突尼斯',value:36.71},
+        {name:'加纳',value:11.49},
+        {name:'斐济',value:31.41},
+        {name:'安哥拉',value:32.99},
+        {name:'冈比亚',value:4.76},
+        {name:'中国',value:37.89},
+        {name:'刚果共和国',value:24.02},
+        {name:'古巴',value:45.95},
+        {name:'苏丹',value:14.59},
+        {name:'伊朗',value:49.76},
+        {name:'委内瑞拉',value:106.43},
+        {name:'土耳其',value:73.85},
+        {name:'牙买加',value:32.98},
+        {name:'叙利亚',value:0},
+        {name:'玻利维亚',value:13.1},
+        {name:'巴西',value:68.18},
+        {name:'阿联酋',value:204.32},
+        {name:'智利',value:70.17},
+        {name:'马来西亚',value:47.23},
+        {name:'苏里南',value:43.68},
+        {name:'前南马其顿',value:23.52},
+        {name:'加蓬',value:47.86},
+        {name:'日本',value:224.41},
+        {name:'阿尔巴尼亚',value:19.88},
+        {name:'墨西哥',value:42.05},
+        {name:'波多黎各',value:122.98},
+        {name:'以色列',value:137.51},
+        {name:'西班牙',value:139},
+        {name:'特立尼达和多巴哥',value:73.85},
+        {name:'卡塔尔',value:312.81},
+        {name:'克罗地亚',value:19.07},
+        {name:'乌拉圭',value:50.36},
+        {name:'塔吉克斯坦',value:3.13},
+        {name:'巴林',value:85.71},
+        {name:'巴拉圭',value:13.55},
+        {name:'沙特阿拉伯',value:75.26},
+        {name:'瑞士',value:290.61},
+        {name:'蒙古',value:10.27},
+        {name:'科威特',value:144.27},
+        {name:'圭亚那',value:11.3},
+        {name:'英国',value:142.92},
+        {name:'塞浦路斯',value:85.21},
+        {name:'阿根廷',value:36.4},
+        {name:'爱尔兰',value:170.27},
+        {name:'意大利',value:122.84},
+        {name:'南非',value:25.19},
+        {name:'荷兰',value:167.29},
+        {name:'黑山共和国',value:20.69},
+        {name:'利比亚',value:35.61},
+        {name:'亚美尼亚',value:9.26},
+        {name:'斯洛文尼亚',value:68.59},
+        {name:'波兰',value:35.51},
+        {name:'希腊',value:74.84},
+        {name:'纳米比亚',value:14.1},
+        {name:'德国',value:113.16},
+        {name:'阿曼',value:53.31},
+        {name:'格鲁吉亚',value:7.76},
+        {name:'卢森堡',value:261.76},
+        {name:'葡萄牙',value:56.74},
+        {name:'阿塞拜疆',value:14.7},
+        {name:'新喀里多尼亚',value:0},
+        {name:'吉尔吉斯斯坦',value:2.18},
+        {name:'新西兰',value:81.44},
+        {name:'乌兹别克斯坦',value:3.28},
+        {name:'塞尔维亚',value:12.33},
+        {name:'法国',value:91.28},
+        {name:'奥地利',value:102.69},
+        {name:'捷克共和国',value:39.81},
+        {name:'斯洛伐克',value:33.15},
+        {name:'拉脱维亚',value:21.6},
+        {name:'挪威',value:164.82},
+        {name:'土库曼斯坦',value:8.36},
+        {name:'比利时',value:81.96},
+        {name:'丹麦',value:99.84},
+        {name:'匈牙利',value:22.46},
+        {name:'伯利兹',value:6.99},
+        {name:'瑞典',value:82.78},
+        {name:'博茨瓦纳',value:9.84},
+        {name:'罗马尼亚',value:12.26},
+        {name:'俄罗斯',value:15.51},
+        {name:'澳大利亚',value:74.66},
+        {name:'加拿大',value:67.79},
+        {name:'保加利亚',value:9.73},
+        {name:'哈萨克斯坦',value:12.24},
+        {name:'立陶宛',value:16.14},
+        {name:'爱沙尼亚',value:19.49},
+        {name:'白俄罗斯',value:7.67},
+        {name:'美国',value:63.52},
+        {name:'美国',value:63.52},
+        {name:'文莱',value:45.69},
+        {name:'摩尔多瓦',value:2.08},
+        {name:'巴哈马',value:26.37},
+        {name:'芬兰',value:55.07},
+        {name:'乌克兰',value:3.33},
+        {name:'北马里亚纳',value:0},
+
+
+
+//{name:'南苏丹',value:0},
+//{name:'索马里兰',value:0},
+//{name:'黑山',value:0},
+//{name:'科索沃',value:0},
+//{name:'塞尔维亚',value:0},
+    ];
+
+    var nameMap = {
+        'Afghanistan':'阿富汗',
+        'Albania':'阿尔巴尼亚',
+        'Algeria':'阿尔及利亚',
+        'Andorra':'安道尔',
+        'Angola':'安哥拉',
+        'Antarctica':'南极洲',
+        'Antigua and Barbuda':'安提瓜和巴布达',
+        'Argentina':'阿根廷',
+        'Armenia':'亚美尼亚',
+        'Australia':'澳大利亚',
+        'Austria':'奥地利',
+        'Azerbaijan':'阿塞拜疆',
+        'The Bahamas':'巴哈马',
+        'Bahrain':'巴林',
+        'Bangladesh':'孟加拉国',
+        'Barbados':'巴巴多斯',
+        'Belarus':'白俄罗斯',
+        'Belgium':'比利时',
+        'Belize':'伯利兹',
+        'Benin':'贝宁',
+        'Bermuda':'百慕大',
+        'Bhutan':'不丹',
+        'Bolivia':'玻利维亚',
+        'Bosnia and Herzegovina':'波斯尼亚和黑塞哥维那',
+        'Botswana':'博茨瓦纳',
+        'Brazil':'巴西',
+        'Brunei':'文莱',
+        'Bulgaria':'保加利亚',
+        'Burkina Faso':'布基纳法索',
+        'Burundi':'布隆迪',
+        'Cambodia':'柬埔寨',
+        'Cameroon':'喀麦隆',
+        'Canada':'加拿大',
+        'Cape Verde':'佛得角',
+        'Central African Republic':'中非共和国',
+        'Chad':'乍得',
+        'Chile':'智利',
+        'China':'中国',
+        'Colombia':'哥伦比亚',
+        'Comoros':'科摩罗',
+        'Republic of the Congo':'刚果共和国',
+        'Costa Rica':'哥斯达黎加',
+        'Croatia':'克罗地亚',
+        'Cuba':'古巴',
+        'Cyprus':'塞浦路斯',
+        'Czech Republic':'捷克共和国',
+        'Denmark':'丹麦',
+        'Djibouti':'吉布提',
+        'Dominica':'多米尼加',
+        'Dominican Republic':'多明尼加共和国',
+        'Ecuador':'厄瓜多尔',
+        'Egypt':'埃及',
+        'El Salvador':'萨尔瓦多',
+        'Equatorial Guinea':'赤道几内亚',
+        'Eritrea':'厄立特里亚',
+        'Estonia':'爱沙尼亚',
+        'Ethiopia':'埃塞俄比亚',
+        'Falkland Islands':'福克兰群岛',
+        'Faroe Islands':'法罗群岛',
+        'Fiji':'斐济',
+        'Finland':'芬兰',
+        'France':'法国',
+        'French Guiana':'法属圭亚那',
+        'French Southern and Antarctic Lands':'法属南半球和南极领地',
+        'Gabon':'加蓬',
+        'Gambia':'冈比亚',
+        'Gaza Strip':'加沙',
+        'Georgia':'格鲁吉亚',
+        'Germany':'德国',
+        'Ghana':'加纳',
+        'Greece':'希腊',
+        'Greenland':'格陵兰',
+        'Grenada':'格林纳达',
+        'Guadeloupe':'瓜德罗普',
+        'Guatemala':'危地马拉',
+        'Guinea':'几内亚',
+        'Guinea Bissau':'几内亚比绍',
+        'Guyana':'圭亚那',
+        'Haiti':'海地',
+        'Honduras':'洪都拉斯',
+        'Hong Kong':'香港',
+        'Hungary':'匈牙利',
+        'Iceland':'冰岛',
+        'India':'印度',
+        'Indonesia':'印尼',
+        'Iran':'伊朗',
+        'Iraq':'伊拉克',
+        'Iraq-Saudi Arabia Neutral Zone':'伊拉克阿拉伯中立区',
+        'Ireland':'爱尔兰',
+        'Isle of Man':'马恩岛',
+        'Israel':'以色列',
+        'Italy':'意大利',
+        'Ivory Coast':'科特迪瓦',
+        'Jamaica':'牙买加',
+        'Jan Mayen':'扬马延岛',
+        'Japan':'日本',
+        'Jordan':'约旦',
+        'Kazakhstan':'哈萨克斯坦',
+        'Kenya':'肯尼亚',
+        'Kerguelen':'凯尔盖朗群岛',
+        'Kiribati':'基里巴斯',
+        'North Korea':'北朝鲜',
+        'South Korea':'韩国',
+        'Kuwait':'科威特',
+        'Kyrgyzstan':'吉尔吉斯斯坦',
+        'Laos':'老挝',
+        'Latvia':'拉脱维亚',
+        'Lebanon':'黎巴嫩',
+        'Lesotho':'莱索托',
+        'Liberia':'利比里亚',
+        'Libya':'利比亚',
+        'Liechtenstein':'列支敦士登',
+        'Lithuania':'立陶宛',
+        'Luxembourg':'卢森堡',
+        'Macau':'澳门',
+        'Macedonia':'马其顿',
+        'Madagascar':'马达加斯加',
+        'Malawi':'马拉维',
+        'Malaysia':'马来西亚',
+        'Maldives':'马尔代夫',
+        'Mali':'马里',
+        'Malta':'马耳他',
+        'Martinique':'马提尼克',
+        'Mauritania':'毛里塔尼亚',
+        'Mauritius':'毛里求斯',
+        'Mexico':'墨西哥',
+        'Moldova':'摩尔多瓦',
+        'Monaco':'摩纳哥',
+        'Mongolia':'蒙古',
+        'Morocco':'摩洛哥',
+        'Mozambique':'莫桑比克',
+        'Myanmar':'缅甸',
+        'Namibia':'纳米比亚',
+        'Nepal':'尼泊尔',
+        'Netherlands':'荷兰',
+        'New Caledonia':'新喀里多尼亚',
+        'New Zealand':'新西兰',
+        'Nicaragua':'尼加拉瓜',
+        'Niger':'尼日尔',
+        'Nigeria':'尼日利亚',
+        'Northern Mariana Islands':'北马里亚纳群岛',
+        'Norway':'挪威',
+        'Oman':'阿曼',
+        'Pakistan':'巴基斯坦',
+        'Panama':'巴拿马',
+        'Papua New Guinea':'巴布亚新几内亚',
+        'Paraguay':'巴拉圭',
+        'Peru':'秘鲁',
+        'Philippines':'菲律宾',
+        'Poland':'波兰',
+        'Portugal':'葡萄牙',
+        'Puerto Rico':'波多黎各',
+        'Qatar':'卡塔尔',
+        'Reunion':'留尼旺岛',
+        'Romania':'罗马尼亚',
+        'Russia':'俄罗斯',
+        'Rwanda':'卢旺达',
+        'San Marino':'圣马力诺',
+        'Sao Tome and Principe':'圣多美和普林西比',
+        'Saudi Arabia':'沙特阿拉伯',
+        'Senegal':'塞内加尔',
+        'Seychelles':'塞舌尔',
+        'Sierra Leone':'塞拉利昂',
+        'Singapore':'新加坡',
+        'Slovakia':'斯洛伐克',
+        'Slovenia':'斯洛文尼亚',
+        'Solomon Islands':'所罗门群岛',
+        'Somalia':'索马里',
+        'South Africa':'南非',
+        'Spain':'西班牙',
+        'Sri Lanka':'斯里兰卡',
+        'St. Christopher-Nevis':'圣',
+        'St. Lucia':'圣露西亚',
+        'St. Vincent and the Grenadines':'圣文森特和格林纳丁斯',
+        'Sudan':'苏丹',
+        'Suriname':'苏里南',
+        'Svalbard':'斯瓦尔巴特群岛',
+        'Swaziland':'斯威士兰',
+        'Sweden':'瑞典',
+        'Switzerland':'瑞士',
+        'Syria':'叙利亚',
+        'Taiwan':'台湾',
+        'Tajikistan':'塔吉克斯坦',
+        'United Republic of Tanzania':'坦桑尼亚',
+        'Thailand':'泰国',
+        'Togo':'多哥',
+        'Tonga':'汤加',
+        'Trinidad and Tobago':'特里尼达和多巴哥',
+        'Tunisia':'突尼斯',
+        'Turkey':'土耳其',
+        'Turkmenistan':'土库曼斯坦',
+        'Turks and Caicos Islands':'特克斯和凯科斯群岛',
+        'Uganda':'乌干达',
+        'Ukraine':'乌克兰',
+        'United Arab Emirates':'阿联酋',
+        'United Kingdom':'英国',
+        'United States of America':'美国',
+        'Uruguay':'乌拉圭',
+        'Uzbekistan':'乌兹别克斯坦',
+        'Vanuatu':'瓦努阿图',
+        'Venezuela':'委内瑞拉',
+        'Vietnam':'越南',
+        'Western Sahara':'西撒哈拉',
+        'Western Samoa':'西萨摩亚',
+        'Yemen':'也门',
+        'Yugoslavia':'南斯拉夫',
+        'Democratic Republic of the Congo':'刚果民主共和国',
+        'Zambia':'赞比亚',
+        'Zimbabwe':'津巴布韦',
+        'South Sudan':'南苏丹',
+        'Somaliland':'索马里兰',
+        'Montenegro':'黑山',
+        'Kosovo':'科索沃',
+        'Republic of Serbia':'塞尔维亚',
+
+    };
+
+    function showWolrdMap(data){
+        optionMap = {
+            timeline: {
+                axisType: 'category',
+                orient: 'vertical',
+                autoPlay: true,
+                inverse: true,
+                playInterval: 5000,
+                left: null,
+                right: -105,
+                top: 20,
+                bottom: 20,
+                width: 46,
+            },
+            baseOption: {
+                visualMap: {
+                    type: 'piecewise', //分段型。
+                    splitNumber: 6,
+                    inverse: true,
+                    pieces: [{
+                        min: -1,
+                        max: 0,
+                        color: '#759aa0'
+                    }, {
+                        min: 1,
+                        max: 100,
+                        color: '#73b9bc'
+                    }, {
+                        min: 100,
+                        max: 150,
+                        color: '#8dc1a9'
+                    }, {
+                        min: 150,
+                        max: 200,
+                        color: '#e69d87'
+                    }, {
+                        min: 200,
+                        max: 300,
+                        color: '#ea7e53'
+                    }, {
+                        min: 300,
+                        max: 500,
+                        color: '#dd6b66'
+                    }],
+                    left: 'left',
+                    top: 'bottom',
+                    textStyle: {
+                        color: '#000'
+                    },
+                    //min: 0,
+                    //max: 60000,
+                    //text:['High','Low'],
+                    //realtime: true,
+                    //calculable: true,
+                    //color: ['red','orange','lightgreen']
+                },
+                series: [{
+                    type: 'map',
+                    map: 'world',
+                    roam: false,
+                    itemStyle:{
+                        emphasis:{label:{show:false}}
+                    },
+                    nameMap: nameMap
+
+                }]
+            },
+
+            options: [{
+                title: {
+                    text: '全国监测点返回24小时平均响应时间',
+                    subtext: '全球监测点返回数据',
+                    //sublink: 'http://esa.un.org/wpp/Excel-Data/population.htm',
+                    left: 'center',
+                    top: 'top'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        var value = (params.value);
+                        //value = value.toFixed(5);toFixed(3)控制小数位数
+                        value = value;
+                        if(!value){
+                            return;
+                        }
+                        //var abc=(params.abc);
+                        return  params.name + ' : ' + value+' ms';
+                    }
+                },
+                series: {
+                    data: data
+
+                }
+            }, ]
+        };
+
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('mainworld'),'wonderland');
+
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(optionMap);
+    }
+</script>
+<!--
+折线图区域  国内
+-->
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+//        table.init('parse-table-demo', { //转化静态表格
+//            //height: 'full-500'
+//        });
+//                        var \$ = layui.\$, active = {
+//                            parseTable: function(){
+//
+//                            }
+//                        };
+//
+//                        \$('.demoTable .layui-btn').on('click', function(){
+//                            var type = \$(this).data('type');
+//                            active[type] ? active[type].call(this) : '';
+//                        });
+    });
+
+    function randomData() {
+//        return Math.round(Math.random()*500);
+        return 0;
+    }
+    var url=\"{{ G.url('app/CePingDetail/getMapData',{'id':_GPC['id'],'type':_GPC['type']})}}\";
+     mapdata = [
+        {name: '北京',value:  randomData() },{name: '天津',value: randomData() },
+        {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
+        {name: '河北',value: randomData() },{name: '河南',value: randomData() },
+        {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
+        {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
+        {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
+        {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
+        {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
+        {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
+        {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
+        {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
+        {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
+        {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
+        {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
+        {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
+        {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
+        {name: '香港',value: randomData() },{name: '澳门',value: randomData() }
+    ];
+
+    \$.ajax({
+        url : url ,
+        type : \"get\" ,
+        dataType : \"json\" ,
+        success:function (data) {
+            var type=\"{{_GPC['type']}}\";
+            mapdata=data;
+            if(type==\"china\"){
+                showMap(mapdata)
+            }else{
+
+                showWolrdMap(mapdata)
+            }
+        },
+        error:function (XmlHttpRequest) {
+            //   console.log(XmlHttpRequest);
+        }
+    });
+    function showMap(mapdata){
+        var optionMap = {
+            backgroundColor: '#f2f2f2',
+            title: {
+                text: '全国监测点返回24小时平均响应时间',
+                subtext: '',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: function (params) {
+                    var value = (params.value);
+                    //value = value.toFixed(5);toFixed(3)控制小数位数
+                    value = value;
+                    if(!value){
+                        return;
+                    }
+                    //var abc=(params.abc);
+                    return  params.name + ' : ' + value+' ms';
+                }
+            },
+
+            //左侧小导航图标
+            visualMap: {
+                show : true,
+                x: 'left',
+                y: 'center',
+                splitList: [
+                    {start: 200, end:500},{start: 150, end: 200},
+                    {start: 100, end: 150},{start: 50, end: 100},
+                    {start: 1, end: 50},{start: -1, end: 1},
+                ],
+                 color: ['#FF5722', '#FFB800', '#5FB878','#74e2ca', '#009688', '#393D49']
+            },
+
+            //配置属性
+            series: [{
+                name: '数据',
+                type: 'map',
+                mapType: 'china',
+                roam: false,
+                label: {
+                    normal: {
+                        show: true  //省份名称
+                    },
+                    emphasis: {
+                        show: false
+                    }
+                },
+                data:mapdata  //数据
+            }]
+        };
+        //初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'),'wonderland');
+        //使用制定的配置项和数据显示图表
+        myChart.setOption(optionMap);
+    }
+
+
+</script>
+<!--
+折线图区域  国内
+-->
+
+<script type=\"text/javascript\">
+    var dom = document.getElementById(\"container\");
+    var myChart = echarts.init(dom);
+    var orderby=\"{{_GPC['orderby']}}\";
+//    var charts = {
+//        unit: '响应时间（TOP5）%',
+//        names: ['上海移动','美国纽约市','天津移动','山东济南联通','北京市联通'],
+//        lineX: ['00:00', '01:15', '02:30', '03:45', '05:00', '06:15', '07:30', '08:45', '10:00', '11:15', '12:30', '13:45', '15:00', '16:15', '17:30', '18:45', '20:00', '21:15', '22:30', '23:45'],
+//        value: [
+//            [451, 352, 303, 534, 95, 236, 217, 328, 159, 151, 231, 192, 453, 524, 165, 236, 527, 328, 129, 530],
+//            [360, 545, 80, 192, 330, 580, 192, 80, 250, 453, 2, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [1, 545, 80, 192, 330, 580, 2, 80, 250, 453, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [3, 545, 80, 192, 330, 580, 3, 80, 250, 3, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98],
+//            [2, 545, 80, 192, 330, 580, 192, 80, 250, 2, 352, 28, 625, 345, 65, 325, 468, 108, 253, 98]
+//        ]
+//
+//    }
+    var url=\"{{ G.url('app/CePingDetail/getLineChart',{'id':_GPC['id'],'type':_GPC['type'],'orderby':_GPC['orderby']})}}\";
+
+    \$.ajax({
+        url : url ,
+        type : \"get\" ,
+        dataType : \"json\" ,
+        success:function (data) {
+
+           if(orderby==\"desc\"){
+               var unit= '响应时间最慢（TOP5）ms';
+           }else{
+               var unit= '响应时间最快（TOP5）ms';
+           }
+            var charts = {
+                unit: unit,
+                names: data.name,
+                lineX: data.chartData.lineX,
+                value: data.chartData.value
+            }
+
+            showChart(charts)
+        },
+        error:function (XmlHttpRequest) {
+            //   console.log(XmlHttpRequest);
+        }
+    });
+
+    function showChart(charts){
+        var color = ['rgba(35, 90, 119', 'rgba(0,150,136', 'rgba(95,184,120', 'rgba(1,170,237', 'rgba(255,182,193']
+        var lineY = []
+
+        for (var i = 0; i < charts.names.length; i++) {
+            var x = i
+            if (x > color.length - 1) {
+                x = color.length - 1
+            }
+            var data = {
+                name: charts.names[i],
+                type: 'line',
+                color: color[x] + ')',
+                smooth: true,
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: color[x] + ', 0.3)'
+                        }, {
+                            offset: 0.8,
+                            color: color[x] + ', 0)'
+                        }], false),
+                        shadowColor: '#393D49',
+                        shadowBlur: 10
+                    }
+                },
+                symbol: 'circle',
+                symbolSize: 5,
+                data: charts.value[i]
+            }
+            lineY.push(data)
+        }
+
+        var option = {
+            backgroundColor:'#f2f2f2',
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: charts.names,
+                textStyle: {
+                    fontSize: 12,
+                    color: '#1f516abd'
+                },
+                right: '4%'
+            },
+            grid: {
+                top: '14%',
+                left: '4%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: charts.lineX,
+                axisLabel: {
+                    textStyle: {
+                        color: '#1f516a'
+                    },
+                    formatter: function(params) {
+                        return params.split(' ')[0]
+                    }
+                }
+            },
+            yAxis: {
+                name: charts.unit,
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value}'+' ms',
+                    textStyle: {
+                        color: '#333'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#1f516abd'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#393D49'
+                    }
+                },
+
+            },
+            series: lineY
+        }
+
+
+
+        if (option && typeof option === \"object\") {
+            myChart.setOption(option, true);
+        }
+    }
+
+</script>
+{{ include(\"common/ceping_footer.html\")}}", "detail/response_time.html", "/data/test/yunceping/bbs/app/template/detail/response_time.html");
+    }
+}

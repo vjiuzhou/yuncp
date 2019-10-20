@@ -1,0 +1,1160 @@
+<?php
+
+/* article/add.html */
+class __TwigTemplate_a22e6ba82e402ed53ef829a4d1073d057ce0039ddf921fdd72b807d86d3d0bea extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo twig_include($this->env, $context, "common/header.html");
+        echo "
+<div class=\"admin\">
+    ";
+        // line 3
+        echo twig_include($this->env, $context, "common/nav.html");
+        echo "
+    <link rel=\"stylesheet\" href=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/wangEditor/css/wangEditor.min.css\">
+    <script type=\"text/javascript\" src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/js/jquery.min.js\"></script>
+    <script type=\"text/javascript\" src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/wangEditor/js/wangEditor.min.js\"></script>
+    <div class=\"aright\">
+        <style type=\"text/css\">
+            .tpt_sels a {
+                padding-right: 15px;
+                position: relative
+            }
+
+            .tpt_sels a {
+                padding: 0 20px 0 8px;
+                color: #3B6268;
+                background: #FFFFBA;
+                border: 1px #F8E06E solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_pres a.selected {
+                padding: 0 8px;
+                color: #3B6268;
+                background: #FFFFBA;
+                border: 1px #F8E06E solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_pres a {
+                padding: 0 8px;
+                color: #fff;
+                background: #5AC7A9;
+                border: 1px #5AC7A9 solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_sels a em {
+                width: 12px;
+                height: 12px;
+                font-style: normal;
+                display: block;
+                position: absolute;
+                top: 7px;
+                right: 4px;
+                z-index: 2;
+                background: url(/blog/Public/img/sx.png) no-repeat 0 0;
+            }
+
+            .wangEditor-menu-container .menu-item a {
+                padding: 12px 0;
+            }
+
+            .wangEditor-menu-container .menu-item {
+                height: 37px;
+                width: 37px;
+            }
+
+            .wangEditor-menu-container .menu-group {
+                padding: 0;
+            }
+
+            .wangEditor-container {
+                border: 1px solid #e6e6e6;
+            }
+        </style>
+        <fieldset class=\"layui-elem-field layui-field-title\" style=\"margin: 20px 30px 20px 20px;\">
+            <legend>添加帖子</legend>
+        </fieldset>
+
+        <form class=\"layui-form bform\" method=\"post\" action=\"";
+        // line 89
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["G"] ?? null), "url", array(0 => "admin/article/add"), "method"), "html", null, true);
+        echo "\"
+              enctype=\"multipart/form-data\">
+
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">文章标题</label>
+                <div class=\"layui-input-block\">
+                    <input type=\"text\" name=\"title\" required lay-verify=\"required\" placeholder=\"必填内容\" autocomplete=\"off\"
+                           class=\"layui-input\">
+                </div>
+            </div>
+
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">文章封面</label>
+                <div class=\"layui-input-block\">
+                    <div class=\"file-box\">
+
+                        <button type=\"button\" class=\"layui-btn\" id=\"upload\">
+                            上传图片
+                        </button>&nbsp;&nbsp;图片尺寸200X200
+                        <input type=\"hidden\" name=\"cover\" value=\"logo.png\"/>
+                    </div>
+                </div>
+            </div>
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\"></label>
+                <div class=\"layui-input-block\">
+                    <img width=\"115\" id=\"image\" height=\"40\" src=\"";
+        // line 115
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "ATTACHMENT_ROOT", array(), "array"), "html", null, true);
+        echo "/logo.png\" alt=\"\"/>
+
+
+                </div>
+            </div>
+
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">国内或者国外</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"type\">
+                        <option value=\"china\">国内</option>
+                        <option value=\"abroad\">国外</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">产品类别</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"product_type\">
+                        <option value=\"cloud_server\">云服务器</option>
+                        <option value=\"vps_server\">VPS服务器</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">厂商</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"manufacturer_id\">
+                        ";
+        // line 145
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["manufcturer"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
+            // line 146
+            echo "                        <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "name", array()), "html", null, true);
+            echo "</option>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 148
+        echo "
+                    </select>
+                </div>
+            </div>
+            <!--<div class=\"layui-form-item\" style=\"width: 300px;\">-->
+                <!--<label class=\"layui-form-label\">区域</label>-->
+                <!--<div class=\"layui-input-block\">-->
+                    <!--<select name=\"area_id\">-->
+                        <!--";
+        // line 156
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["area"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["data"]) {
+            echo "-->
+                        <!--<option value=\"";
+            // line 157
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "name", array()), "html", null, true);
+            echo "</option>-->
+                        <!--";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['data'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 158
+        echo "-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">区域</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"area_id\">
+                        <option value=\"1\">美国</option>
+                        <option value=\"2\">韩国</option>
+                        <option value=\"3\">新加坡</option>
+                        <option value=\"4\">俄罗斯</option>
+                        <option value=\"5\">日本</option>
+                        <option value=\"6\">香港</option>
+                        <option value=\"7\">台湾</option>
+                        <option value=\"8\">上海</option>
+                        <option value=\"9\">北京</option>
+                        <option value=\"10\">广州</option>
+                        <option value=\"11\">深圳</option>
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\">
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">内存</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"memory\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">CPU</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"cpu\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">磁盘</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ssd\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">带宽</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"bandwidth\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">ipv4</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ipv4\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">ipv6</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ipv6\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">流量</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"outflow\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">每月价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"month_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">半年价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"half_year_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">每年价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"year_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+
+            </div>
+            <div class=\"layui-form-item\">
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">官网地址</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"url\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">优惠卷</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"discount\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">优惠折扣</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"discount_num\"  placeholder=\"输入整数或者浮点数\"  lay-verify=\"required|number\"  autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class=\"layui-form-item layui-form-text\">-->
+                <!--<label class=\"layui-form-label\">帖子描述</label>-->
+                <!--<div class=\"layui-input-block\">-->
+                    <!--<textarea name=\"description\" placeholder=\"用于搜索引擎\" class=\"layui-textarea\"></textarea>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">描述</label>
+                <div class=\"layui-input-block\">
+                    <textarea    id=\"describes\"   placeholder=\"用于搜索引擎\"  class=\"layui-textarea\" name=\"describes\" style=\"height:200px;width: 100%;\">
+
+                    </textarea>
+                </div>
+            </div>
+            <div class=\"layui-form-item layui-form-text\">
+                <label class=\"layui-form-label\">文章内容</label>
+                <div class=\"layui-input-block\">
+      <textarea id=\"textarea\" name=\"text\" style=\"height:600px;width: 100%;\">
+      <p>请输入内容...</p>
+      </textarea>
+                </div>
+            </div>
+
+            <div class=\"tpt_item\">
+                <!--<input type=\"hidden\" name=\"keywords\" value=\"\">-->
+                <input type=\"hidden\" name=\"submit\" value=\"1\">
+                <div id=\"tpt_sel\" class=\"tpt_sels\" style=\"margin-top: 20px;\">
+\t\t<span style=\"margin-bottom: 5px;float: left;margin-left: 110px;\">
+\t\t\t\t</span>
+                    <div class=\"layui-form-item\" style=\"margin-bottom: 10px;\">
+                        <!--<label class=\"layui-form-label\">文章标签</label>-->
+                        <!--<div class=\"layui-input-block\">-->
+                        <!--<input id=\"tpt_input\" type=\"text\" value=\"\" autocomplete=\"off\" class=\"layui-input\" style=\"width: 400px;float: left;margin-right: 20px;\">-->
+                        <!--<button class=\"layui-btn\" id=\"tpt_btn\" type=\"button\" style=\"background: #FF5722;\">添加标签</button>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div id=\"tpt_pre\" class=\"tpt_pres layui-input-block cl\" style=\"margin-bottom: 0px;\">
+                    <!--<a href=\"javascript:;\">新媒体</a><a href=\"javascript:;\">iphone8</a><a href=\"javascript:;\">游戏</a><a href=\"javascript:;\">视频</a><a href=\"javascript:;\">淘宝</a><a href=\"javascript:;\">雷军</a><a href=\"javascript:;\">网红</a><a href=\"javascript:;\">人工智能</a><a href=\"javascript:;\">大朋VR</a><a href=\"javascript:;\">机器人</a><a href=\"javascript:;\">小米</a><a href=\"javascript:;\">综艺</a><a href=\"javascript:;\">真人秀</a><a href=\"javascript:;\">自定义</a> -->
+                </div>
+
+                <div class=\"layui-form-item\">
+                    <div class=\"layui-input-block\">
+                        <button class=\"layui-btn\" lay-submit lay-filter=\"formDemo\">立即提交</button>
+                        <button class=\"layui-btn layui-btn-primary\" onclick=\"history.go(-1)\">返回</button>
+                    </div>
+                </div>
+                <div class=\"layui-form-item\">
+                    <div class=\"layui-input-block\" style=\"margin-top: 100px;\">
+
+                    </div>
+                </div>
+
+        </form>
+        <script type=\"text/javascript\">
+            \$(function () {
+                \$('#tpt_input').keydown(function (e) {
+                    if (e.which === 13) {
+                        \$(\"#tpt_btn\").click();
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+                \$(\"#tpt_sel\").on('click', 'a>em', function () {
+                    var name = \"keywords\";
+                    var tag = \$(this).parent().text();
+                    \$(this).parent().remove();
+                    var tags = new Array();
+                    \$(\"#tpt_sel\").find('a').each(function () {
+                        tags.push(\$(this).text());
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(\"#tpt_pre a:contains('\" + tag + \"')\").removeClass(\"selected\");
+                });
+                \$(\"#tpt_btn\").click(function () {
+                    var name = \"keywords\";
+                    var tags = \$.trim(\$(\"input[name=\" + name + \"]\").val());
+                    if (tags !== \"\") {
+                        tags = tags.split(\",\");
+                    } else {
+                        tags = new Array();
+                    }
+                    var tag = \$.trim(\$(\"#tpt_input\").val());
+                    if (tag !== '' && \$.inArray(tag, tags) === -1) {
+                        tags.push(tag);
+                        \$(\"#tpt_pre a:contains('\" + tag + \"')\").addClass(\"selected\");
+                    }
+                    \$(\"#tpt_sel\").children('span').empty();
+                    \$.each(tags, function (k, v) {
+                        \$(\"#tpt_sel\").children('span').append('<a href=\"javascript:;\">' + v + '<em></em></a>');
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(\"#tpt_input\").val('');
+                });
+                \$(\"#tpt_pre\").on('click', 'a:not(.selected)', function () {
+                    var name = \"keywords\";
+                    var tags = \$.trim(\$(\"input[name=\" + name + \"]\").val());
+                    if (tags !== \"\") {
+                        tags = tags.split(\",\");
+                    } else {
+                        tags = new Array();
+                    }
+                    var tag = \$.trim(\$(this).text());
+                    if (tag !== '' && \$.inArray(tag, tags) === -1) {
+                        tags.push(tag);
+                    }
+                    \$(\"#tpt_sel\").children('span').empty();
+                    \$.each(tags, function (k, v) {
+                        \$(\"#tpt_sel\").children('span').append('<a href=\"javascript:;\">' + v + '<em></em></a>');
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(this).addClass('selected');
+                });
+            });
+        </script>
+        <script>
+            layui.use('form', function () {
+//                var form = layui.form();
+            });
+        </script>
+        <script type=\"text/javascript\">
+            var editor = new wangEditor('textarea');
+            editor.config.uploadImgUrl = \"";
+        // line 387
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["G"] ?? null), "url", array(0 => "admin/posts/doUploadPic"), "method"), "html", null, true);
+        echo "\";
+            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+                editor.config.menus = [
+                    'source',
+                    'bold',
+                    'underline',
+                    'fontsize',
+                    'link',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'undo',
+                ];
+
+            }else{
+                editor.config.menus = [
+                    'source',
+                    //   '|',
+                    'bold',
+                    'underline',
+                    //  'italic',
+                    // 'strikethrough',
+                    // 'eraser',
+                    'forecolor',
+                    'bgcolor',
+                    // '|',
+                    'quote',
+                    'fontfamily',
+                    'fontsize',
+                    'head',
+                    //   'unorderlist',
+                    //   'orderlist',
+                    //  'alignleft',
+                    //  'aligncenter',
+                    //   'alignright',
+                    //   '|',
+                    'link',
+                    // 'unlink',
+                    'table',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'video',
+                    // 'location',
+                    'insertcode',
+                    //    '|',
+                    'undo',
+                    'redo',
+                    'fullscreen'
+                ];
+
+            }
+            editor.create();
+        </script>
+        <script type=\"text/javascript\">
+            var editor2 = new wangEditor('describe');
+            editor2.config.uploadImgUrl = \"";
+        // line 443
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["G"] ?? null), "url", array(0 => "admin/posts/doUploadPic"), "method"), "html", null, true);
+        echo "\";
+            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+                editor2.config.menus = [
+                    'source',
+                    'bold',
+                    'underline',
+                    'fontsize',
+                    'link',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'undo',
+                ];
+
+            }else{
+                editor2.config.menus = [
+                    'source',
+                    //   '|',
+                    'bold',
+                    'underline',
+                    //  'italic',
+                    // 'strikethrough',
+                    // 'eraser',
+                    'forecolor',
+                    'bgcolor',
+                    // '|',
+                    'quote',
+                    'fontfamily',
+                    'fontsize',
+                    'head',
+                    //   'unorderlist',
+                    //   'orderlist',
+                    //  'alignleft',
+                    //  'aligncenter',
+                    //   'alignright',
+                    //   '|',
+                    'link',
+                    // 'unlink',
+                    'table',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'video',
+                    // 'location',
+                    'insertcode',
+                    //    '|',
+                    'undo',
+                    'redo',
+                    'fullscreen'
+                ];
+
+            }
+            editor2.create();
+        </script>
+        <script>
+
+            layui.use(['form','upload'], function(){
+                var upload = layui.upload;
+                /**
+                 * 图片上传
+                 */
+                var uploadInst = upload.render({
+                    elem: '#upload' //绑定元素
+                    ,url: escapeUrl(\"";
+        // line 506
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP_URL", array(), "array"), "html", null, true);
+        echo "?m=admin&c=files&a=uploadFile\") //上传接口
+                    ,method:\"post\"
+                    ,data:{width:350}
+                    ,done: function(res){
+                        if(res.code==1001 && res.data){
+                            \$('#image').attr('src',\"";
+        // line 511
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "ATTACHMENT_ROOT", array(), "array"), "html", null, true);
+        echo "/\"+res.data);
+                            \$('input[name=cover]').val(res.data);
+                        }
+                    }
+                    ,error: function(res){
+
+                    }
+                });
+            });
+
+
+        </script>
+    </div>
+</div>
+</body>
+</html>";
+    }
+
+    public function getTemplateName()
+    {
+        return "article/add.html";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  589 => 511,  581 => 506,  515 => 443,  456 => 387,  225 => 158,  215 => 157,  209 => 156,  199 => 148,  188 => 146,  184 => 145,  151 => 115,  122 => 89,  36 => 6,  32 => 5,  28 => 4,  24 => 3,  19 => 1,);
+    }
+
+    /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return $this->getSourceContext()->getCode();
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{{ include(\"common/header.html\")}}
+<div class=\"admin\">
+    {{ include(\"common/nav.html\")}}
+    <link rel=\"stylesheet\" href=\"{{_G['APP']}}/resource/wangEditor/css/wangEditor.min.css\">
+    <script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/js/jquery.min.js\"></script>
+    <script type=\"text/javascript\" src=\"{{_G['APP']}}/resource/wangEditor/js/wangEditor.min.js\"></script>
+    <div class=\"aright\">
+        <style type=\"text/css\">
+            .tpt_sels a {
+                padding-right: 15px;
+                position: relative
+            }
+
+            .tpt_sels a {
+                padding: 0 20px 0 8px;
+                color: #3B6268;
+                background: #FFFFBA;
+                border: 1px #F8E06E solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_pres a.selected {
+                padding: 0 8px;
+                color: #3B6268;
+                background: #FFFFBA;
+                border: 1px #F8E06E solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_pres a {
+                padding: 0 8px;
+                color: #fff;
+                background: #5AC7A9;
+                border: 1px #5AC7A9 solid;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 26px;
+                line-height: 26px;
+                display: block;
+                float: left
+            }
+
+            .tpt_sels a em {
+                width: 12px;
+                height: 12px;
+                font-style: normal;
+                display: block;
+                position: absolute;
+                top: 7px;
+                right: 4px;
+                z-index: 2;
+                background: url(/blog/Public/img/sx.png) no-repeat 0 0;
+            }
+
+            .wangEditor-menu-container .menu-item a {
+                padding: 12px 0;
+            }
+
+            .wangEditor-menu-container .menu-item {
+                height: 37px;
+                width: 37px;
+            }
+
+            .wangEditor-menu-container .menu-group {
+                padding: 0;
+            }
+
+            .wangEditor-container {
+                border: 1px solid #e6e6e6;
+            }
+        </style>
+        <fieldset class=\"layui-elem-field layui-field-title\" style=\"margin: 20px 30px 20px 20px;\">
+            <legend>添加帖子</legend>
+        </fieldset>
+
+        <form class=\"layui-form bform\" method=\"post\" action=\"{{ G.url('admin/article/add')}}\"
+              enctype=\"multipart/form-data\">
+
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">文章标题</label>
+                <div class=\"layui-input-block\">
+                    <input type=\"text\" name=\"title\" required lay-verify=\"required\" placeholder=\"必填内容\" autocomplete=\"off\"
+                           class=\"layui-input\">
+                </div>
+            </div>
+
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">文章封面</label>
+                <div class=\"layui-input-block\">
+                    <div class=\"file-box\">
+
+                        <button type=\"button\" class=\"layui-btn\" id=\"upload\">
+                            上传图片
+                        </button>&nbsp;&nbsp;图片尺寸200X200
+                        <input type=\"hidden\" name=\"cover\" value=\"logo.png\"/>
+                    </div>
+                </div>
+            </div>
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\"></label>
+                <div class=\"layui-input-block\">
+                    <img width=\"115\" id=\"image\" height=\"40\" src=\"{{_G['ATTACHMENT_ROOT']}}/logo.png\" alt=\"\"/>
+
+
+                </div>
+            </div>
+
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">国内或者国外</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"type\">
+                        <option value=\"china\">国内</option>
+                        <option value=\"abroad\">国外</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">产品类别</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"product_type\">
+                        <option value=\"cloud_server\">云服务器</option>
+                        <option value=\"vps_server\">VPS服务器</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">厂商</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"manufacturer_id\">
+                        {% for data in manufcturer %}
+                        <option value=\"{{data.id}}\">{{data.name}}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </div>
+            <!--<div class=\"layui-form-item\" style=\"width: 300px;\">-->
+                <!--<label class=\"layui-form-label\">区域</label>-->
+                <!--<div class=\"layui-input-block\">-->
+                    <!--<select name=\"area_id\">-->
+                        <!--{% for data in area %}-->
+                        <!--<option value=\"{{data.id}}\">{{data.name}}</option>-->
+                        <!--{% endfor %}-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class=\"layui-form-item\" style=\"width: 300px;\">
+                <label class=\"layui-form-label\">区域</label>
+                <div class=\"layui-input-block\">
+                    <select name=\"area_id\">
+                        <option value=\"1\">美国</option>
+                        <option value=\"2\">韩国</option>
+                        <option value=\"3\">新加坡</option>
+                        <option value=\"4\">俄罗斯</option>
+                        <option value=\"5\">日本</option>
+                        <option value=\"6\">香港</option>
+                        <option value=\"7\">台湾</option>
+                        <option value=\"8\">上海</option>
+                        <option value=\"9\">北京</option>
+                        <option value=\"10\">广州</option>
+                        <option value=\"11\">深圳</option>
+                    </select>
+                </div>
+            </div>
+            <div class=\"layui-form-item\">
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">内存</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"memory\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">CPU</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"cpu\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">磁盘</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ssd\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">带宽</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"bandwidth\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">ipv4</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ipv4\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">ipv6</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"ipv6\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">流量</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"outflow\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">每月价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"month_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">半年价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"half_year_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">每年价格</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"year_price\" lay-verify=\"required|number\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+
+            </div>
+            <div class=\"layui-form-item\">
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">官网地址</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"url\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">优惠卷</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"discount\" autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+                <div class=\"layui-inline\">
+                    <label class=\"layui-form-label\">优惠折扣</label>
+                    <div class=\"layui-input-inline\">
+                        <input type=\"text\" name=\"discount_num\"  placeholder=\"输入整数或者浮点数\"  lay-verify=\"required|number\"  autocomplete=\"off\" class=\"layui-input\">
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class=\"layui-form-item layui-form-text\">-->
+                <!--<label class=\"layui-form-label\">帖子描述</label>-->
+                <!--<div class=\"layui-input-block\">-->
+                    <!--<textarea name=\"description\" placeholder=\"用于搜索引擎\" class=\"layui-textarea\"></textarea>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class=\"layui-form-item\">
+                <label class=\"layui-form-label\">描述</label>
+                <div class=\"layui-input-block\">
+                    <textarea    id=\"describes\"   placeholder=\"用于搜索引擎\"  class=\"layui-textarea\" name=\"describes\" style=\"height:200px;width: 100%;\">
+
+                    </textarea>
+                </div>
+            </div>
+            <div class=\"layui-form-item layui-form-text\">
+                <label class=\"layui-form-label\">文章内容</label>
+                <div class=\"layui-input-block\">
+      <textarea id=\"textarea\" name=\"text\" style=\"height:600px;width: 100%;\">
+      <p>请输入内容...</p>
+      </textarea>
+                </div>
+            </div>
+
+            <div class=\"tpt_item\">
+                <!--<input type=\"hidden\" name=\"keywords\" value=\"\">-->
+                <input type=\"hidden\" name=\"submit\" value=\"1\">
+                <div id=\"tpt_sel\" class=\"tpt_sels\" style=\"margin-top: 20px;\">
+\t\t<span style=\"margin-bottom: 5px;float: left;margin-left: 110px;\">
+\t\t\t\t</span>
+                    <div class=\"layui-form-item\" style=\"margin-bottom: 10px;\">
+                        <!--<label class=\"layui-form-label\">文章标签</label>-->
+                        <!--<div class=\"layui-input-block\">-->
+                        <!--<input id=\"tpt_input\" type=\"text\" value=\"\" autocomplete=\"off\" class=\"layui-input\" style=\"width: 400px;float: left;margin-right: 20px;\">-->
+                        <!--<button class=\"layui-btn\" id=\"tpt_btn\" type=\"button\" style=\"background: #FF5722;\">添加标签</button>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div id=\"tpt_pre\" class=\"tpt_pres layui-input-block cl\" style=\"margin-bottom: 0px;\">
+                    <!--<a href=\"javascript:;\">新媒体</a><a href=\"javascript:;\">iphone8</a><a href=\"javascript:;\">游戏</a><a href=\"javascript:;\">视频</a><a href=\"javascript:;\">淘宝</a><a href=\"javascript:;\">雷军</a><a href=\"javascript:;\">网红</a><a href=\"javascript:;\">人工智能</a><a href=\"javascript:;\">大朋VR</a><a href=\"javascript:;\">机器人</a><a href=\"javascript:;\">小米</a><a href=\"javascript:;\">综艺</a><a href=\"javascript:;\">真人秀</a><a href=\"javascript:;\">自定义</a> -->
+                </div>
+
+                <div class=\"layui-form-item\">
+                    <div class=\"layui-input-block\">
+                        <button class=\"layui-btn\" lay-submit lay-filter=\"formDemo\">立即提交</button>
+                        <button class=\"layui-btn layui-btn-primary\" onclick=\"history.go(-1)\">返回</button>
+                    </div>
+                </div>
+                <div class=\"layui-form-item\">
+                    <div class=\"layui-input-block\" style=\"margin-top: 100px;\">
+
+                    </div>
+                </div>
+
+        </form>
+        <script type=\"text/javascript\">
+            \$(function () {
+                \$('#tpt_input').keydown(function (e) {
+                    if (e.which === 13) {
+                        \$(\"#tpt_btn\").click();
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+                \$(\"#tpt_sel\").on('click', 'a>em', function () {
+                    var name = \"keywords\";
+                    var tag = \$(this).parent().text();
+                    \$(this).parent().remove();
+                    var tags = new Array();
+                    \$(\"#tpt_sel\").find('a').each(function () {
+                        tags.push(\$(this).text());
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(\"#tpt_pre a:contains('\" + tag + \"')\").removeClass(\"selected\");
+                });
+                \$(\"#tpt_btn\").click(function () {
+                    var name = \"keywords\";
+                    var tags = \$.trim(\$(\"input[name=\" + name + \"]\").val());
+                    if (tags !== \"\") {
+                        tags = tags.split(\",\");
+                    } else {
+                        tags = new Array();
+                    }
+                    var tag = \$.trim(\$(\"#tpt_input\").val());
+                    if (tag !== '' && \$.inArray(tag, tags) === -1) {
+                        tags.push(tag);
+                        \$(\"#tpt_pre a:contains('\" + tag + \"')\").addClass(\"selected\");
+                    }
+                    \$(\"#tpt_sel\").children('span').empty();
+                    \$.each(tags, function (k, v) {
+                        \$(\"#tpt_sel\").children('span').append('<a href=\"javascript:;\">' + v + '<em></em></a>');
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(\"#tpt_input\").val('');
+                });
+                \$(\"#tpt_pre\").on('click', 'a:not(.selected)', function () {
+                    var name = \"keywords\";
+                    var tags = \$.trim(\$(\"input[name=\" + name + \"]\").val());
+                    if (tags !== \"\") {
+                        tags = tags.split(\",\");
+                    } else {
+                        tags = new Array();
+                    }
+                    var tag = \$.trim(\$(this).text());
+                    if (tag !== '' && \$.inArray(tag, tags) === -1) {
+                        tags.push(tag);
+                    }
+                    \$(\"#tpt_sel\").children('span').empty();
+                    \$.each(tags, function (k, v) {
+                        \$(\"#tpt_sel\").children('span').append('<a href=\"javascript:;\">' + v + '<em></em></a>');
+                    });
+                    \$(\"input[name=\" + name + \"]\").val(tags.join(\",\"));
+                    \$(this).addClass('selected');
+                });
+            });
+        </script>
+        <script>
+            layui.use('form', function () {
+//                var form = layui.form();
+            });
+        </script>
+        <script type=\"text/javascript\">
+            var editor = new wangEditor('textarea');
+            editor.config.uploadImgUrl = \"{{ G.url('admin/posts/doUploadPic') }}\";
+            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+                editor.config.menus = [
+                    'source',
+                    'bold',
+                    'underline',
+                    'fontsize',
+                    'link',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'undo',
+                ];
+
+            }else{
+                editor.config.menus = [
+                    'source',
+                    //   '|',
+                    'bold',
+                    'underline',
+                    //  'italic',
+                    // 'strikethrough',
+                    // 'eraser',
+                    'forecolor',
+                    'bgcolor',
+                    // '|',
+                    'quote',
+                    'fontfamily',
+                    'fontsize',
+                    'head',
+                    //   'unorderlist',
+                    //   'orderlist',
+                    //  'alignleft',
+                    //  'aligncenter',
+                    //   'alignright',
+                    //   '|',
+                    'link',
+                    // 'unlink',
+                    'table',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'video',
+                    // 'location',
+                    'insertcode',
+                    //    '|',
+                    'undo',
+                    'redo',
+                    'fullscreen'
+                ];
+
+            }
+            editor.create();
+        </script>
+        <script type=\"text/javascript\">
+            var editor2 = new wangEditor('describe');
+            editor2.config.uploadImgUrl = \"{{ G.url('admin/posts/doUploadPic') }}\";
+            if(navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)){
+                editor2.config.menus = [
+                    'source',
+                    'bold',
+                    'underline',
+                    'fontsize',
+                    'link',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'undo',
+                ];
+
+            }else{
+                editor2.config.menus = [
+                    'source',
+                    //   '|',
+                    'bold',
+                    'underline',
+                    //  'italic',
+                    // 'strikethrough',
+                    // 'eraser',
+                    'forecolor',
+                    'bgcolor',
+                    // '|',
+                    'quote',
+                    'fontfamily',
+                    'fontsize',
+                    'head',
+                    //   'unorderlist',
+                    //   'orderlist',
+                    //  'alignleft',
+                    //  'aligncenter',
+                    //   'alignright',
+                    //   '|',
+                    'link',
+                    // 'unlink',
+                    'table',
+                    'emotion',
+                    //  '|',
+                    'img',
+                    'video',
+                    // 'location',
+                    'insertcode',
+                    //    '|',
+                    'undo',
+                    'redo',
+                    'fullscreen'
+                ];
+
+            }
+            editor2.create();
+        </script>
+        <script>
+
+            layui.use(['form','upload'], function(){
+                var upload = layui.upload;
+                /**
+                 * 图片上传
+                 */
+                var uploadInst = upload.render({
+                    elem: '#upload' //绑定元素
+                    ,url: escapeUrl(\"{{_G['APP_URL']}}?m=admin&c=files&a=uploadFile\") //上传接口
+                    ,method:\"post\"
+                    ,data:{width:350}
+                    ,done: function(res){
+                        if(res.code==1001 && res.data){
+                            \$('#image').attr('src',\"{{_G['ATTACHMENT_ROOT']}}/\"+res.data);
+                            \$('input[name=cover]').val(res.data);
+                        }
+                    }
+                    ,error: function(res){
+
+                    }
+                });
+            });
+
+
+        </script>
+    </div>
+</div>
+</body>
+</html>", "article/add.html", "/data/test/yunceping/bbs/addons/admin/template/article/add.html");
+    }
+}
