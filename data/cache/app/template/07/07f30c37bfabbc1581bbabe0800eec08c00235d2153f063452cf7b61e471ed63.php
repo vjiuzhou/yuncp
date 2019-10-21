@@ -144,7 +144,7 @@ class __TwigTemplate_e8f575dedc503ce333aa612cb1b0eec28966826ca0ed77c193e8e25cd7b
               </span>
                 <span class=\"\">";
             // line 69
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["data"], "created_time", array()), "Y-m-d"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["data"], "created_time", array()), "Y-m-d H:i"), "html", null, true);
             echo "</span>
               </p>
             </a></li>
@@ -421,7 +421,7 @@ class __TwigTemplate_e8f575dedc503ce333aa612cb1b0eec28966826ca0ed77c193e8e25cd7b
                 <span class=\"author\">
                    {{data.name}}
               </span>
-                <span class=\"\">{{data.created_time | date('Y-m-d')}}</span>
+                <span class=\"\">{{data.created_time | date('Y-m-d H:i')}}</span>
               </p>
             </a></li>
             {% endfor %}
@@ -552,6 +552,6 @@ class __TwigTemplate_e8f575dedc503ce333aa612cb1b0eec28966826ca0ed77c193e8e25cd7b
         return false;
     })
 </script>
-{{ include(\"common/ceping_footer.html\")}}", "search/cepingindex.html", "/data/test/yunceping/bbs/app/template/search/cepingindex.html");
+{{ include(\"common/ceping_footer.html\")}}", "search/cepingindex.html", "/data/test/yuncp/app/template/search/cepingindex.html");
     }
 }

@@ -133,13 +133,13 @@ class ArticleValidate extends BaseValidate
             ->integer('必须是一个整型integer')
             ->validate('outflow');
         $validator
-            ->integer('必须是一个整型integer')
+            ->required('必须是一个整型integer')
             ->validate('month_price');
         $validator
-            ->integer('必须是一个整型integer')
+            ->required('必须是一个整型integer')
             ->validate('half_year_price');
         $validator
-            ->integer('必须是一个整型integer')
+            ->required('必须是一个整型integer')
             ->validate('year_price');
 
 

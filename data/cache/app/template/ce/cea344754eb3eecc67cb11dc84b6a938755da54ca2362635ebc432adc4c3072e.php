@@ -66,7 +66,9 @@ class __TwigTemplate_7fbd74c2c1819a57f9337590f169bb7017d5d43b4e5d789bdb32c61cba1
             // line 21
             echo "\t\t\t\t\t\t";
             echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "name", array()), "html", null, true);
-            echo " <b>2018-06-07</b> <i class=\"layui-icon layui-icon-news-review1\"></i>";
+            echo " <b>";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["data"], "created_time", array()), "Y-m-d H:i"), "html", null, true);
+            echo "</b> <i class=\"layui-icon layui-icon-news-review1\"></i>";
             echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "comment_num", array()), "html", null, true);
             echo "</div>
     \t\t\t\t<p class=\"cont\">
@@ -226,7 +228,7 @@ class __TwigTemplate_7fbd74c2c1819a57f9337590f169bb7017d5d43b4e5d789bdb32c61cba1
 
     public function getDebugInfo()
     {
-        return array (  214 => 99,  203 => 91,  199 => 90,  195 => 89,  191 => 88,  187 => 87,  183 => 86,  179 => 85,  175 => 84,  171 => 83,  167 => 82,  151 => 69,  141 => 62,  131 => 55,  121 => 48,  110 => 44,  99 => 36,  89 => 29,  86 => 28,  75 => 23,  67 => 21,  63 => 19,  59 => 17,  57 => 16,  50 => 14,  42 => 13,  39 => 12,  35 => 11,  24 => 3,  19 => 1,);
+        return array (  216 => 99,  205 => 91,  201 => 90,  197 => 89,  193 => 88,  189 => 87,  185 => 86,  181 => 85,  177 => 84,  173 => 83,  169 => 82,  153 => 69,  143 => 62,  133 => 55,  123 => 48,  112 => 44,  101 => 36,  91 => 29,  88 => 28,  77 => 23,  67 => 21,  63 => 19,  59 => 17,  57 => 16,  50 => 14,  42 => 13,  39 => 12,  35 => 11,  24 => 3,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -259,7 +261,7 @@ class __TwigTemplate_7fbd74c2c1819a57f9337590f169bb7017d5d43b4e5d789bdb32c61cba1
 \t\t\t\t\t\t{% else %}
 \t\t\t\t\t\t<span class=\"violet\">VPS服务器</span>
 \t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t{{data.name}} <b>2018-06-07</b> <i class=\"layui-icon layui-icon-news-review1\"></i>{{data.comment_num}}</div>
+\t\t\t\t\t\t{{data.name}} <b>{{data.created_time | date('Y-m-d H:i')}}</b> <i class=\"layui-icon layui-icon-news-review1\"></i>{{data.comment_num}}</div>
     \t\t\t\t<p class=\"cont\">
 \t\t\t\t\t\t{{ data.describes|e('html_attr') }}
 \t\t\t\t\t</p>
@@ -337,6 +339,6 @@ class __TwigTemplate_7fbd74c2c1819a57f9337590f169bb7017d5d43b4e5d789bdb32c61cba1
   <!--<div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>-->
 </div>
 
-{{ include(\"common/ceping_footer.html\")}}", "index/cepingindex.html", "/data/test/yunceping/bbs/app/template/index/cepingindex.html");
+{{ include(\"common/ceping_footer.html\")}}", "index/cepingindex.html", "/data/test/yuncp/app/template/index/cepingindex.html");
     }
 }

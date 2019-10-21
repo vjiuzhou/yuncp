@@ -18,7 +18,7 @@
 						{% else %}
 						<span class="violet">VPS服务器</span>
 						{% endif %}
-						{{data.name}} <b>2018-06-07</b> <i class="layui-icon layui-icon-news-review1"></i>{{data.comment_num}}</div>
+						{{data.name}} <b>{{data.created_time | date('Y-m-d H:i')}}</b> <i class="layui-icon layui-icon-news-review1"></i>{{data.comment_num}}</div>
     				<p class="cont">
 						{{ data.describes|e('html_attr') }}
 					</p>

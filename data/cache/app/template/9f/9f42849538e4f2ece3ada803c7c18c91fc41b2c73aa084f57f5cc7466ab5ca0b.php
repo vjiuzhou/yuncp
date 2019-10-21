@@ -47,13 +47,33 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
         // line 21
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "title", array()), "html", null, true);
         echo "</h1>
-                        <div class=\"newsClass\"><span>财经</span>小明同学 <b>2018-06-07 08:30</b> <i>收藏1289</i> <i>评论500</i></div>
-                        <p class=\"title\">文章摘自奇闻趣事每日说</p>
+                        <div class=\"newsClass\">
+
+                            ";
+        // line 24
+        if (($this->getAttribute(($context["posts"] ?? null), "product_type", array()) == "cloud_server")) {
+            // line 25
+            echo "                            <span>云服务器</span>
+                            ";
+        } else {
+            // line 27
+            echo "                            <span class=\"violet\">VPS服务器</span>
+                            ";
+        }
+        // line 29
+        echo "
+                            ";
+        // line 30
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["data"] ?? null), "name", array()), "html", null, true);
+        echo "  <b>";
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "created_time", array()), "Y-m-d H:i"), "html", null, true);
+        echo "</b> <i>收藏1289</i> <i>评论500</i></div>
+                        <p class=\"title\"></p>
                         <div class=\"layui-col-md12\" >
                             <blockquote class=\"layui-elem-quote\">
 
                                 ";
-        // line 27
+        // line 35
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "describes", array(), "array"), "html_attr");
         echo "
                             </blockquote>
@@ -61,16 +81,16 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 
                             <div class=\"layui-col-md3\" style=\"text-align: center\">阿里云官网
                                 <a  href=\" ";
-        // line 32
+        // line 40
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "url", array()), "html", null, true);
         echo "\" target=\"_blank\" class=\"layui-btn layui-btn-sm layui-btn-ceping\" data-type=\"parseTable\">点击传送</a></div>
                             <div class=\"layui-col-md9\" style=\"text-align: center\">优惠卷：
                                 ";
-        // line 34
+        // line 42
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "discount", array()), "html", null, true);
         echo "
                                 购买输入此优惠码，可打";
-        // line 35
+        // line 43
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "discount_num", array()), "html", null, true);
         echo "折
 
@@ -205,118 +225,118 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                         </div>
 
                         ";
-        // line 167
+        // line 175
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "text", array(), "array"), "html_attr");
         echo "
 
 
                     </div>
 
-                    <div class=\"detail-label\">
-                        <i class=\"layui-icon layui-icon-news-label\"></i>
-                        <span class=\"layui-breadcrumb\">
-\t\t\t\t\t  <a href=\"javascript:;\">华为手机</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">华为荣耀</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">CPU</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">GPU</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">三星</a>
-\t\t\t\t\t</span>
-                    </div>
-                    <div class=\"detail-comment\">
-                        <p>全部评论 <span>102</span></p>
-                        <div class=\"addComment layui-form\">
-                            <div class=\"img\"><span><img src=\"";
-        // line 185
+                    <!--<div class=\"detail-label\">-->
+                        <!--<i class=\"layui-icon layui-icon-news-label\"></i>-->
+                        <!--<span class=\"layui-breadcrumb\">-->
+\t\t\t\t\t  <!--<a href=\"javascript:;\">华为手机</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">华为荣耀</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">CPU</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">GPU</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">三星</a>-->
+\t\t\t\t\t<!--</span>-->
+                    <!--</div>-->
+                    <!--<div class=\"detail-comment\">-->
+                        <!--<p>全部评论 <span>102</span></p>-->
+                        <!--<div class=\"addComment layui-form\">-->
+                            <!--<div class=\"img\"><span><img src=\"";
+        // line 193
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header2.png\"></span></div><div class=\"content\">
-                            <textarea placeholder=\"写下您想说的评论吧...\" class=\"layui-textarea\"></textarea>
-                            <div class=\"btn\"><button class=\"layui-btn\">添加评论</button></div>
-                        </div>
-                        </div>
-                        <ul id=\"replyCont\">
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 192
+        echo "/resource/static/img/header2.png\"></span></div><div class=\"content\">-->
+                            <!--<textarea placeholder=\"写下您想说的评论吧...\" class=\"layui-textarea\"></textarea>-->
+                            <!--<div class=\"btn\"><button class=\"layui-btn\">添加评论</button></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<ul id=\"replyCont\">-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 200
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 199
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 207
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 206
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 214
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 213
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 221
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 220
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 228
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 227
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 235
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 234
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 242
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"";
-        // line 241
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"";
+        // line 249
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                        </ul>
-                        <div id=\"detailPage\"></div>
-                    </div>
+        echo "/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<div id=\"detailPage\"></div>-->
+                    <!--</div>-->
                 </div>
             </div>
             <div class=\"layui-col-sm4\">
@@ -343,7 +363,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     </td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell\">";
-        // line 275
+        // line 283
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "memory", array()), "html", null, true);
         echo "</div>
                                     </td>
@@ -353,7 +373,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">CPU</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell\">";
-        // line 282
+        // line 290
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "cpu", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -362,7 +382,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">硬盘</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell\">";
-        // line 288
+        // line 296
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "ssd", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -371,7 +391,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">流量限制</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 294
+        // line 302
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "outflow", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -380,7 +400,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">带宽</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 300
+        // line 308
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "bandwidth", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -389,7 +409,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">IPv4</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 306
+        // line 314
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "ipv4", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -398,7 +418,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell\">IPv6</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 312
+        // line 320
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "ipv6", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -407,7 +427,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">每月价格</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 318
+        // line 326
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "month_price", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -416,7 +436,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">每半年价格</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 324
+        // line 332
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "half_year_price", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -425,7 +445,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                                     <div class=\"layui-table-cell \">一年价格</div></td>
                                 <td data-field=\"value\">
                                     <div class=\"layui-table-cell \">";
-        // line 330
+        // line 338
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "year_price", array()), "html", null, true);
         echo "</div></td>
                             </tr>
@@ -435,7 +455,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 
                     <!--<div class=\"person\">-->
                         <!--<a class=\"img\"><img src=\"";
-        // line 337
+        // line 345
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
         echo "/resource/static/img/header.jpg\"></a>-->
                         <!--<span class=\"name\">小明同学</span>-->
@@ -445,38 +465,6 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                     <div class=\"list\">
                         <p>热门推荐</p>
                         <ul>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 345
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img2.jpg\"><span>王者荣耀貂蝉皮肤逐梦之音全服正式上线</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 346
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img3.jpg\"><span>第一批机器人创业的老板已经跑路了</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 347
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img4.jpg\"><span>快递服务走向智能化</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 348
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img5.jpg\"><span>生男孩和生女孩分别在孕期有哪些症状</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 349
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img2.jpg\"><span>王者荣耀貂蝉皮肤逐梦之音全服正式上线</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 350
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img3.jpg\"><span>第一批机器人创业的老板已经跑路了</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 351
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img4.jpg\"><span>快递服务走向智能化</span></a></li>
-                            <li><a href=\"javascript:;\"><img src=\"";
-        // line 352
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
-        echo "/resource/static/img/paging_img5.jpg\"><span>生男孩和生女孩分别在孕期有哪些症状</span></a></li>
                             <li><a href=\"javascript:;\"><img src=\"";
         // line 353
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
@@ -493,12 +481,44 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
         // line 356
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
         echo "/resource/static/img/paging_img5.jpg\"><span>生男孩和生女孩分别在孕期有哪些症状</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 357
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img2.jpg\"><span>王者荣耀貂蝉皮肤逐梦之音全服正式上线</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 358
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img3.jpg\"><span>第一批机器人创业的老板已经跑路了</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 359
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img4.jpg\"><span>快递服务走向智能化</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 360
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img5.jpg\"><span>生男孩和生女孩分别在孕期有哪些症状</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 361
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img2.jpg\"><span>王者荣耀貂蝉皮肤逐梦之音全服正式上线</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 362
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img3.jpg\"><span>第一批机器人创业的老板已经跑路了</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 363
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img4.jpg\"><span>快递服务走向智能化</span></a></li>
+                            <li><a href=\"javascript:;\"><img src=\"";
+        // line 364
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
+        echo "/resource/static/img/paging_img5.jpg\"><span>生男孩和生女孩分别在孕期有哪些症状</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>
+        <!--<div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>-->
     </div>
 
     <!--<div class=\"layui-container\">-->
@@ -507,16 +527,16 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
             <!--<div class=\"layui-col-md12\">-->
                 <!--&lt;!&ndash;<div class=\"layui-col-md5\" style=\"text-align: center\">阿里云官网&ndash;&gt;-->
                     <!--&lt;!&ndash;<a  href=\" ";
-        // line 370
+        // line 378
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "url", array()), "html", null, true);
         echo "\" target=\"_blank\" class=\"layui-btn layui-btn-sm layui-btn-ceping\" data-type=\"parseTable\">点击传送</a></div>&ndash;&gt;-->
                 <!--&lt;!&ndash;<div class=\"layui-col-md7\" style=\"text-align: center\">优惠卷：&ndash;&gt;-->
                     <!--&lt;!&ndash;";
-        // line 372
+        // line 380
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "discount", array()), "html", null, true);
         echo "&ndash;&gt;-->
                     <!--&lt;!&ndash;购买时输入此优惠码，可打折 ";
-        // line 373
+        // line 381
         echo twig_escape_filter($this->env, $this->getAttribute(($context["posts"] ?? null), "discount_num", array()), "html", null, true);
         echo "优惠&ndash;&gt;-->
                     <!--&lt;!&ndash;<button class=\"layui-btn layui-btn-sm layui-btn-ceping\" data-type=\"parseTable\">点击复制</button></div>&ndash;&gt;-->
@@ -669,13 +689,13 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 </div>
 
 <script src=\"";
-        // line 523
+        // line 531
         echo twig_escape_filter($this->env, $this->getAttribute(($context["_G"] ?? null), "APP", array(), "array"), "html", null, true);
         echo "/resource/layui/layui.all.js\" charset=\"utf-8\"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 ";
-        // line 526
+        // line 534
         echo twig_include($this->env, $context, "common/ceping_footer.html");
     }
 
@@ -691,7 +711,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 
     public function getDebugInfo()
     {
-        return array (  679 => 526,  673 => 523,  520 => 373,  516 => 372,  511 => 370,  494 => 356,  490 => 355,  486 => 354,  482 => 353,  478 => 352,  474 => 351,  470 => 350,  466 => 349,  462 => 348,  458 => 347,  454 => 346,  450 => 345,  439 => 337,  429 => 330,  420 => 324,  411 => 318,  402 => 312,  393 => 306,  384 => 300,  375 => 294,  366 => 288,  357 => 282,  347 => 275,  310 => 241,  300 => 234,  290 => 227,  280 => 220,  270 => 213,  260 => 206,  250 => 199,  240 => 192,  230 => 185,  209 => 167,  74 => 35,  70 => 34,  65 => 32,  57 => 27,  48 => 21,  31 => 7,  24 => 3,  19 => 1,);
+        return array (  699 => 534,  693 => 531,  540 => 381,  536 => 380,  531 => 378,  514 => 364,  510 => 363,  506 => 362,  502 => 361,  498 => 360,  494 => 359,  490 => 358,  486 => 357,  482 => 356,  478 => 355,  474 => 354,  470 => 353,  459 => 345,  449 => 338,  440 => 332,  431 => 326,  422 => 320,  413 => 314,  404 => 308,  395 => 302,  386 => 296,  377 => 290,  367 => 283,  330 => 249,  320 => 242,  310 => 235,  300 => 228,  290 => 221,  280 => 214,  270 => 207,  260 => 200,  250 => 193,  229 => 175,  94 => 43,  90 => 42,  85 => 40,  77 => 35,  67 => 30,  64 => 29,  60 => 27,  56 => 25,  54 => 24,  48 => 21,  31 => 7,  24 => 3,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -725,8 +745,16 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                     </ul>
                     <div class=\"detail-cont\">
                         <h1> {{posts.title}}</h1>
-                        <div class=\"newsClass\"><span>财经</span>小明同学 <b>2018-06-07 08:30</b> <i>收藏1289</i> <i>评论500</i></div>
-                        <p class=\"title\">文章摘自奇闻趣事每日说</p>
+                        <div class=\"newsClass\">
+
+                            {% if posts.product_type==\"cloud_server\" %}
+                            <span>云服务器</span>
+                            {% else %}
+                            <span class=\"violet\">VPS服务器</span>
+                            {% endif %}
+
+                            {{data.name}}  <b>{{posts.created_time | date('Y-m-d H:i')}}</b> <i>收藏1289</i> <i>评论500</i></div>
+                        <p class=\"title\"></p>
                         <div class=\"layui-col-md12\" >
                             <blockquote class=\"layui-elem-quote\">
 
@@ -875,84 +903,84 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 
                     </div>
 
-                    <div class=\"detail-label\">
-                        <i class=\"layui-icon layui-icon-news-label\"></i>
-                        <span class=\"layui-breadcrumb\">
-\t\t\t\t\t  <a href=\"javascript:;\">华为手机</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">华为荣耀</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">CPU</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">GPU</a>/
-\t\t\t \t\t\t<a href=\"javascript:;\">三星</a>
-\t\t\t\t\t</span>
-                    </div>
-                    <div class=\"detail-comment\">
-                        <p>全部评论 <span>102</span></p>
-                        <div class=\"addComment layui-form\">
-                            <div class=\"img\"><span><img src=\"{{_G['APP']}}/resource/static/img/header2.png\"></span></div><div class=\"content\">
-                            <textarea placeholder=\"写下您想说的评论吧...\" class=\"layui-textarea\"></textarea>
-                            <div class=\"btn\"><button class=\"layui-btn\">添加评论</button></div>
-                        </div>
-                        </div>
-                        <ul id=\"replyCont\">
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                            <li>
-                                <div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">
-                                <p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>
-                                <p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>
-                                <a class=\"reply\" href=\"javascript:;\">回复</a>
-                            </div>
-                            </li>
-                        </ul>
-                        <div id=\"detailPage\"></div>
-                    </div>
+                    <!--<div class=\"detail-label\">-->
+                        <!--<i class=\"layui-icon layui-icon-news-label\"></i>-->
+                        <!--<span class=\"layui-breadcrumb\">-->
+\t\t\t\t\t  <!--<a href=\"javascript:;\">华为手机</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">华为荣耀</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">CPU</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">GPU</a>/-->
+\t\t\t \t\t\t<!--<a href=\"javascript:;\">三星</a>-->
+\t\t\t\t\t<!--</span>-->
+                    <!--</div>-->
+                    <!--<div class=\"detail-comment\">-->
+                        <!--<p>全部评论 <span>102</span></p>-->
+                        <!--<div class=\"addComment layui-form\">-->
+                            <!--<div class=\"img\"><span><img src=\"{{_G['APP']}}/resource/static/img/header2.png\"></span></div><div class=\"content\">-->
+                            <!--<textarea placeholder=\"写下您想说的评论吧...\" class=\"layui-textarea\"></textarea>-->
+                            <!--<div class=\"btn\"><button class=\"layui-btn\">添加评论</button></div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<ul id=\"replyCont\">-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<div class=\"img\"><a href=\"\"><img src=\"{{_G['APP']}}/resource/static/img/header3.png\"></a></div><div class=\"readCom\">-->
+                                <!--<p class=\"name\"><a href=\"\">王小笑</a><span>1小时前</span><span class=\"goods\">100<i class=\"layui-icon layui-icon-news-good\"></i></span></p>-->
+                                <!--<p class=\"txt\">这篇新闻写的太棒了！给用户带来可用的信息这篇新闻写的很棒！</p>-->
+                                <!--<a class=\"reply\" href=\"javascript:;\">回复</a>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<div id=\"detailPage\"></div>-->
+                    <!--</div>-->
                 </div>
             </div>
             <div class=\"layui-col-sm4\">
@@ -1065,7 +1093,7 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
                 </div>
             </div>
         </div>
-        <div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>
+        <!--<div id=\"silde\"><a id=\"refresh\"><i class=\"layui-icon layui-icon-refresh\"></i></a><a id=\"scroll\"><i class=\"layui-icon layui-icon-up\"></i></a></div>-->
     </div>
 
     <!--<div class=\"layui-container\">-->
@@ -1229,6 +1257,6 @@ class __TwigTemplate_8ff84a30a8f621bf98939797cc8bc168047a58ac9f5c1b99f9049d6c0d3
 <script src=\"{{_G['APP']}}/resource/layui/layui.all.js\" charset=\"utf-8\"></script>
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
-{{ include(\"common/ceping_footer.html\")}}", "detail/overview.html", "/data/test/yunceping/bbs/app/template/detail/overview.html");
+{{ include(\"common/ceping_footer.html\")}}", "detail/overview.html", "/data/test/yuncp/app/template/detail/overview.html");
     }
 }

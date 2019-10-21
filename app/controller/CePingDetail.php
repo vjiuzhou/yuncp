@@ -45,7 +45,7 @@ class CePingDetail extends Base
         //获得访问用户信息
         $access_token=self::$session->get('access_token');
         $loginUserinfo=self::$session->get($access_token);
-
+        //p($posts);
         $this->assign('posts',$posts);
         $this->assign('userInfo',$userInfo);
         $this->assign('loginUserinfo',$loginUserinfo);

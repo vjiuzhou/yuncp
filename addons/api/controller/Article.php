@@ -184,6 +184,7 @@ class Article extends ArticleModel
      */
     public function changePost()
     {
+
         /**
          * 移除表情字符串
          */
@@ -192,11 +193,12 @@ class Article extends ArticleModel
         $validate       = new ArticleValidate($this->post);
         $validateResult = $validate->changePostValidate();
         $validateResultParameter = $validate->addParameterValidate();
+
         /**
          * 判断验证是否有报错信息
          */
         if (@$validateResult->code == 2001 || @$validateResultParameter->code==2001) {
-            return $validateResult;
+            return $this->returnMessage(2001, '参数错误', $validateResult);
         }
 
         $result = $this->findPost($validateResult['id']);
@@ -212,13 +214,14 @@ class Article extends ArticleModel
 
             $result = $this->updatePost($validateResult, ['id' => $validateResult['id']]);
 
-            if ($result) {
+
 
                 $resultParameter = $this->updateParameter($validateResultParameter, ['article_id' => $validateResult['id']]);
-                if($resultParameter){
+
+                if($resultParameter || $result){
                     return $this->returnMessage(1001, '响应成功', $result);
                 }
-            }
+
             return $this->returnMessage(2001, '响应错误', $result);
 
         //}

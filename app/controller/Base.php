@@ -57,6 +57,8 @@ class Base extends ApiModel
         /**
          * 获取导航列表
          */
+
+
         $navList=$nav->getNavList();
         $this->assign('domain',$domain);
         $this->assign('navList',$navList);

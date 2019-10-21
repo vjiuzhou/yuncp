@@ -23,15 +23,15 @@ class __TwigTemplate_1c6647436d96b5caab7a9a910fdd7c0e0961c35942d780158e426a34689
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <title>";
         // line 6
-        echo twig_escape_filter($this->env, ($context["title_"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "_云测评</title>
     <meta name=\"keywords\" content=\"";
         // line 7
-        echo twig_escape_filter($this->env, ($context["keywords_"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["keywords"] ?? null), "html", null, true);
         echo ",云测评\">
     <meta name=\"description\" itemprop=\"description\" content=\"";
         // line 8
-        echo twig_escape_filter($this->env, ($context["description_"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["description"] ?? null), "html", null, true);
         echo "_万能查_关注有价值的商业信息\">
     <meta content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\" name=\"viewport\">
     <link rel=\"shortcut icon\" href=\"";
@@ -127,9 +127,9 @@ class __TwigTemplate_1c6647436d96b5caab7a9a910fdd7c0e0961c35942d780158e426a34689
 <head>
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <title>{{title_}}_云测评</title>
-    <meta name=\"keywords\" content=\"{{keywords_}},云测评\">
-    <meta name=\"description\" itemprop=\"description\" content=\"{{description_}}_万能查_关注有价值的商业信息\">
+    <title>{{title}}_云测评</title>
+    <meta name=\"keywords\" content=\"{{keywords}},云测评\">
+    <meta name=\"description\" itemprop=\"description\" content=\"{{description}}_万能查_关注有价值的商业信息\">
     <meta content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\" name=\"viewport\">
     <link rel=\"shortcut icon\" href=\"{{_G['APP']}}/resource/images/logox80.jpg\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">
@@ -158,6 +158,6 @@ class __TwigTemplate_1c6647436d96b5caab7a9a910fdd7c0e0961c35942d780158e426a34689
 <body>
 
 
-", "common/ceping_header.html", "/data/test/yunceping/bbs/app/template/common/ceping_header.html");
+", "common/ceping_header.html", "/data/test/yuncp/app/template/common/ceping_header.html");
     }
 }
