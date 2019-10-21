@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ee53f81-e692-4c61-810b-1979e400489d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/rock.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/api/controller/Article.php" afterPath="$PROJECT_DIR$/addons/api/controller/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addons/api/validate/ArticleValidate.php" afterPath="$PROJECT_DIR$/addons/api/validate/ArticleValidate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/Base.php" afterPath="$PROJECT_DIR$/app/controller/Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/CePingDetail.php" afterPath="$PROJECT_DIR$/app/controller/CePingDetail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/template/common/ceping_header.html" afterPath="$PROJECT_DIR$/app/template/common/ceping_header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/template/detail/overview.html" afterPath="$PROJECT_DIR$/app/template/detail/overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/template/index/cepingindex.html" afterPath="$PROJECT_DIR$/app/template/index/cepingindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/template/search/cepingindex.html" afterPath="$PROJECT_DIR$/app/template/search/cepingindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/app/template/07/07f30c37bfabbc1581bbabe0800eec08c00235d2153f063452cf7b61e471ed63.php" afterPath="$PROJECT_DIR$/data/cache/app/template/07/07f30c37bfabbc1581bbabe0800eec08c00235d2153f063452cf7b61e471ed63.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/app/template/9f/9f42849538e4f2ece3ada803c7c18c91fc41b2c73aa084f57f5cc7466ab5ca0b.php" afterPath="$PROJECT_DIR$/data/cache/app/template/9f/9f42849538e4f2ece3ada803c7c18c91fc41b2c73aa084f57f5cc7466ab5ca0b.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/app/template/a4/a42271dddc860850c04ad9fa0d61d1bb4b44ba4c3affd28f2787db0a697ed6e7.php" afterPath="$PROJECT_DIR$/data/cache/app/template/a4/a42271dddc860850c04ad9fa0d61d1bb4b44ba4c3affd28f2787db0a697ed6e7.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cache/app/template/ce/cea344754eb3eecc67cb11dc84b6a938755da54ca2362635ebc432adc4c3072e.php" afterPath="$PROJECT_DIR$/data/cache/app/template/ce/cea344754eb3eecc67cb11dc84b6a938755da54ca2362635ebc432adc4c3072e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.php" afterPath="$PROJECT_DIR$/tasks.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,22 +13,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/addons/api/controller/Article.php">
+      <file leaf-file-name="tasks.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tasks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="201" column="9" lean-forward="true" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleValidate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/api/validate/ArticleValidate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="141" column="40" lean-forward="false" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="457">
+              <caret line="118" column="46" lean-forward="false" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+              <folding>
+                <marker date="1571662145824" expanded="true" signature="482:532" ph="select * fro... ceping_task" />
+                <marker date="1571662145824" expanded="true" signature="872:1222" ph="insert into ceping_snapshot" />
+                <marker date="1571662145824" expanded="true" signature="1404:1482" ph="update `cepi... " />
+                <marker date="1571662145824" expanded="true" signature="1596:1683" ph="update `cepi... " />
+                <marker date="1571662145824" expanded="true" signature="2053:2078" ph="select * fro... ceping_area" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,6 +46,7 @@
         <option value="$PROJECT_DIR$/app/template/detail/overview.html" />
         <option value="$PROJECT_DIR$/addons/api/validate/ArticleValidate.php" />
         <option value="$PROJECT_DIR$/addons/api/controller/Article.php" />
+        <option value="$PROJECT_DIR$/tasks.php" />
       </list>
     </option>
   </component>
@@ -135,19 +120,6 @@
               <item name="yuncp" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="yuncp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuncp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="yuncp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuncp" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -184,12 +156,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571576681673</updated>
-      <workItem from="1571576684961" duration="1321000" />
+      <workItem from="1571576684961" duration="1906000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1321000" />
+    <option name="totallyTimeSpent" value="1906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="72" width="1341" height="775" extended-state="0" />
@@ -298,6 +270,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/addons/api/controller/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="201" column="9" lean-forward="true" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/addons/api/validate/ArticleValidate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -306,11 +286,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/api/controller/Article.php">
+    <entry file="file://$PROJECT_DIR$/tasks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="201" column="9" lean-forward="true" selection-start-line="201" selection-start-column="9" selection-end-line="201" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="457">
+          <caret line="118" column="46" lean-forward="false" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+          <folding>
+            <marker date="1571662145824" expanded="true" signature="482:532" ph="select * fro... ceping_task" />
+            <marker date="1571662145824" expanded="true" signature="872:1222" ph="insert into ceping_snapshot" />
+            <marker date="1571662145824" expanded="true" signature="1404:1482" ph="update `cepi... " />
+            <marker date="1571662145824" expanded="true" signature="1596:1683" ph="update `cepi... " />
+            <marker date="1571662145824" expanded="true" signature="2053:2078" ph="select * fro... ceping_area" />
+          </folding>
         </state>
       </provider>
     </entry>

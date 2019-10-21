@@ -115,7 +115,9 @@ function taskStart($pdo,$article_id,$task,$host){
             }
             $newData['article_id']=$article_id;
             $newData['area_id']=$d['id'];
-            insertTaskData($newData,$pdo);
+            if($newData['ttl'] !=0){
+                insertTaskData($newData,$pdo);
+            }
         });
     }
 
